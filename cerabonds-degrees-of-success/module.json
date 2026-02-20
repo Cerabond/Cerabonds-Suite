@@ -1,4 +1,5 @@
 {
+    "id": "cerabonds-degrees-of-success",
     "name": "cerabonds-degrees-of-success",
     "title": "Cerabond's Degrees of Success",
     "description": "Tints tokens based on the degree of success when rolling a saving throw.",

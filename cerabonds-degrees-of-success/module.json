@@ -1,0 +1,13 @@
+{
+    "name": "cerabonds-degrees-of-success",
+    "title": "Cerabond's Degrees of Success",
+    "description": "Tints tokens based on the degree of success when rolling a saving throw.",
+    "version": "1.0.0",
+    "authors": [{ "name": "Cerabond" }],
+    "esmodules": ["cerabonds-degrees-of-success.js"],
+    "manifest": "modules/cerabonds-degrees-of-success/module.json",
+      "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  }
+}

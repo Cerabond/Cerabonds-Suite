@@ -5,7 +5,8 @@
     "version": "1.0.0",
     "authors": [{ "name": "Cerabond" }],
     "esmodules": ["cerabonds-degrees-of-success.js"],
-    "manifest": "modules/cerabonds-degrees-of-success/module.json",
+    "manifest": "https://raw.githubusercontent.com/Cerabond/Cerabonds-Suite/refs/heads/master/cerabonds-degrees-of-success/module.json",
+    "download": "https://github.com/my-user/my-module/releases/download/1.0.0/module.zip",
       "compatibility": {
     "minimum": "13",
     "verified": "13"

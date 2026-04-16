@@ -46,49 +46,44 @@ Hooks.on('renderChatLog', (app, element) => {
     event.stopPropagation();
     event.stopImmediatePropagation();
     const die = btn.dataset.die;
-    console.log(TAG, `Button pointerdown: ${die}`);
-    rollDie(die);
-  }, true); // capture phase
-
-  // Also add click as a fallback, in case pointerdown is also blocked.
-  tray.addEventListener('click', (event) => {
-    const btn = event.target.closest('.dice-tray__btn');
-    if (!btn) return;
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    const die = btn.dataset.die;
-    console.log(TAG, `Button click fallback: ${die}`);
-    rollDie(die);
+    console.log(TAG, `Button pressed: ${die}`);
+    insertDieFormula(die, anchor);
   }, true); // capture phase
 
   console.log(TAG, 'Event listeners attached to tray (delegated)');
 });
 
-async function rollDie(die) {
-  const formula = `1${die}`;
-  console.log(TAG, `Rolling: ${formula}`);
+function insertDieFormula(die, formAnchor) {
+  const formula = `/r 1${die}`;
+  console.log(TAG, `Inserting formula into chat: ${formula}`);
 
-  try {
-    // Use ui.chat.processMessage which handles everything including /r commands.
-    // This is the same path as typing "/r 1d20" in the chat box.
-    await ui.chat.processMessage(`/r ${formula}`);
-    console.log(TAG, `Roll sent to chat: ${formula}`);
-  } catch (err) {
-    console.error(TAG, 'Roll via processMessage failed:', err);
+  // v14 uses ProseMirror for the chat input. Find the editor element.
+  const pmEditor = formAnchor.querySelector('.ProseMirror') ??
+    formAnchor.querySelector('[contenteditable="true"]') ??
+    document.querySelector('.chat-form .ProseMirror') ??
+    document.querySelector('.chat-form [contenteditable="true"]');
 
-    // Fallback: try direct Roll API
-    try {
-      console.log(TAG, 'Trying direct Roll API fallback...');
-      const RollClass = CONFIG.Dice?.rolls?.[0] ?? Roll;
-      console.log(TAG, 'Using Roll class:', RollClass.name);
-      const roll = new RollClass(formula);
-      await roll.evaluate();
-      console.log(TAG, 'Roll evaluated:', roll.total);
-      await roll.toMessage();
-      console.log(TAG, 'Roll message sent');
-    } catch (err2) {
-      console.error(TAG, 'Direct Roll API also failed:', err2);
-    }
+  if (pmEditor) {
+    // ProseMirror contenteditable div — set its text content and dispatch
+    // an input event so ProseMirror picks up the change.
+    pmEditor.focus();
+    pmEditor.innerHTML = `<p>${formula}</p>`;
+    pmEditor.dispatchEvent(new Event('input', { bubbles: true }));
+    console.log(TAG, 'Formula inserted into ProseMirror editor');
+    return;
   }
+
+  // Fallback: look for a plain textarea (older Foundry or custom setups).
+  const textarea = formAnchor.querySelector('textarea') ??
+    document.querySelector('.chat-form textarea');
+
+  if (textarea) {
+    textarea.focus();
+    textarea.value = formula;
+    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+    console.log(TAG, 'Formula inserted into textarea');
+    return;
+  }
+
+  console.warn(TAG, 'Could not find chat input element to insert formula.');
 }

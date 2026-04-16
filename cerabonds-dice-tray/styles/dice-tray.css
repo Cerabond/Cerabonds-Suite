@@ -33,3 +33,25 @@
   border-color: #c9a84c;
   color: #fff;
 }
+
+#cerabonds-dice-tray .dice-tray__flat-checks {
+  border-top: 1px solid #7a6a58;
+  margin-top: 2px;
+  padding-top: 3px;
+}
+
+#cerabonds-dice-tray .dice-tray__flat-btn {
+  font-size: 0.7rem;
+  background: rgba(40, 20, 60, 0.5);
+  border-color: #8a6ab8;
+}
+
+#cerabonds-dice-tray .dice-tray__flat-btn:hover {
+  background: rgba(70, 40, 100, 0.85);
+  border-color: #b88aef;
+}
+
+.cerabonds-flat-check h4 {
+  margin: 0 0 2px;
+  font-size: 0.95em;
+}

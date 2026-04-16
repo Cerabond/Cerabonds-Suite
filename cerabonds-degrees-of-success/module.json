@@ -1,14 +1,24 @@
 {
-    "id": "cerabonds-degrees-of-success",
-    "name": "cerabonds-degrees-of-success",
-    "title": "Cerabond's Suite",
-    "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now.",
-    "version": "1.0.0",
-    "authors": [{ "name": "Cerabond" }],
-    "esmodules": ["cerabonds-degrees-of-success.js", "auto-hide.js", "auto-switch.js", "force-chat-tab.js", "unknown-name.js"],
-    "manifest": "https://raw.githubusercontent.com/Cerabond/Cerabonds-Suite/refs/heads/master/cerabonds-degrees-of-success/module.json",
-    "download": "https://github.com/Cerabond/Cerabonds-Suite/raw/refs/heads/master/cerabonds-degrees-of-success/module.zip",
-      "compatibility": {
+  "id": "cerabonds-degrees-of-success",
+  "name": "cerabonds-degrees-of-success",
+  "title": "Cerabond's Suite",
+  "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Cerabond"
+    }
+  ],
+  "esmodules": [
+    "cerabonds-degrees-of-success.js",
+    "auto-hide.js",
+    "auto-switch.js",
+    "force-chat-tab.js",
+    "unknown-name.js"
+  ],
+  "manifest": "https://raw.githubusercontent.com/Cerabond/Cerabonds-Suite/refs/heads/master/cerabonds-degrees-of-success/module.json",
+  "download": "https://github.com/Cerabond/Cerabonds-Suite/raw/refs/heads/master/cerabonds-degrees-of-success/module.zip",
+  "compatibility": {
     "minimum": "13",
     "verified": "13"
   }

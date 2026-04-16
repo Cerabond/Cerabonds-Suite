@@ -1,0 +1,23 @@
+{
+    "id": "cerabonds-dice-tray",
+    "name": "cerabonds-dice-tray",
+    "title": "Cerabond's Dice Tray",
+    "description": "Dice Tray compatible with v14",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Cerabond"
+        }
+    ],
+    "esmodules": [
+        "scripts/dice-tray.js"
+    ],
+    "styles": [
+        "styles/dice-tray.css"
+    ],
+    "manifest": "https://raw.githubusercontent.com/Cerabond/Cerabonds-Suite/refs/heads/master/cerabonds-dice-tray/module.json",
+    "compatibility": {
+        "minimum": "14",
+        "verified": "14"
+    }
+}

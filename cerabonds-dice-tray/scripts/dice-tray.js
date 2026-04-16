@@ -1,6 +1,6 @@
 // Cerabonds Dice Tray
 
-const DICE = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20'];
+const DICE = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
 const TAG = 'Cerabonds Dice Tray |';
 
 Hooks.on('renderChatLog', (app, element) => {
@@ -53,19 +53,30 @@ Hooks.on('renderChatLog', (app, element) => {
   console.log(TAG, 'Event listeners attached to tray (delegated)');
 });
 
-function insertDieFormula(die, formAnchor) {
-  const formula = `/r 1${die}`;
-  console.log(TAG, `Inserting formula into chat: ${formula}`);
+// Track accumulated dice so clicks are additive.
+// Resets when the chat box is submitted or cleared.
+const dicePool = {};
 
-  // v14 uses ProseMirror for the chat input. Find the editor element.
+function insertDieFormula(die, formAnchor) {
+  // Add this die to the pool.
+  dicePool[die] = (dicePool[die] || 0) + 1;
+  console.log(TAG, `Pool updated:`, { ...dicePool });
+
+  // Build the formula from the pool: /r 2d4 + 1d6 + ...
+  const parts = [];
+  for (const d of DICE) {
+    if (dicePool[d]) parts.push(`${dicePool[d]}${d}`);
+  }
+  const formula = `/r ${parts.join(' + ')}`;
+  console.log(TAG, `Formula: ${formula}`);
+
+  // Find the editor and set its content.
   const pmEditor = formAnchor.querySelector('.ProseMirror') ??
     formAnchor.querySelector('[contenteditable="true"]') ??
     document.querySelector('.chat-form .ProseMirror') ??
     document.querySelector('.chat-form [contenteditable="true"]');
 
   if (pmEditor) {
-    // ProseMirror contenteditable div — set its text content and dispatch
-    // an input event so ProseMirror picks up the change.
     pmEditor.focus();
     pmEditor.innerHTML = `<p>${formula}</p>`;
     pmEditor.dispatchEvent(new Event('input', { bubbles: true }));
@@ -73,7 +84,7 @@ function insertDieFormula(die, formAnchor) {
     return;
   }
 
-  // Fallback: look for a plain textarea (older Foundry or custom setups).
+  // Fallback: plain textarea.
   const textarea = formAnchor.querySelector('textarea') ??
     document.querySelector('.chat-form textarea');
 
@@ -87,3 +98,9 @@ function insertDieFormula(die, formAnchor) {
 
   console.warn(TAG, 'Could not find chat input element to insert formula.');
 }
+
+// Clear the pool when a chat message is sent.
+Hooks.on('chatMessage', () => {
+  console.log(TAG, 'Chat submitted, clearing dice pool');
+  Object.keys(dicePool).forEach(k => delete dicePool[k]);
+});

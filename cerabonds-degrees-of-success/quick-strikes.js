@@ -12,16 +12,21 @@ let _quickStrikeRollingDamage = false;
 // Set before strike.damage/critical is called; cleared in the finally block.
 let _pendingQuickStrikeTarget = null;
 
-// ─── Dialog: auto-confirm the DamageModifierDialog ───────────────────────────
+// ─── Dialog: suppress the DamageModifierDialog entirely ──────────────────────
 // DamageDamageContext has no `skipDialog` field for NPC attacks, so the dialog
-// always appears even when we pass skipDialog:true to strike.damage(). We
-// dismiss it here by setting isRolled=true before calling close(), which causes
-// the dialog's internal Promise to resolve with `true` (roll confirmed).
-Hooks.on("renderDamageModifierDialog", (app) => {
+// always opens even when we pass skipDialog:true to strike.damage().
+//
+// DamageModifierDialog.resolve() calls this.render(true) without awaiting it,
+// then synchronously sets this.#resolve. By the time the async render pipeline
+// reaches the preRender hook, #resolve is already set — so we can call
+// app.close() here (which calls #resolve(true)) and return false to cancel the
+// render. The dialog is never painted at all.
+Hooks.on("preRenderDamageModifierDialog", (app) => {
     if (!_quickStrikeRollingDamage) return;
-    console.log(TAG, "Auto-dismissing DamageModifierDialog");
+    console.log(TAG, "Suppressing DamageModifierDialog");
     app.isRolled = true;
     app.close();
+    return false;
 });
 
 // ─── Tag: stamp the damage-roll chat message with our target UUID ─────────────

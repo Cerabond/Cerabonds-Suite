@@ -49,15 +49,21 @@ Hooks.on("createChatMessage", async (message) => {
         const targetToken = await fromUuid(targetUuid);
         if (!targetToken) { console.warn(TAG, "Could not resolve target for damage application:", targetUuid); return; }
 
+        const targetActor = targetToken.actor;
+        if (!targetActor) { console.warn(TAG, "Target token has no actor:", targetUuid); return; }
+
+        const damageRoll = message.rolls[0];
+        if (!damageRoll) { console.warn(TAG, "No damage roll found in message"); return; }
+
         try {
-            if (game.pf2e?.Damage?.applyDamage) {
-                await game.pf2e.Damage.applyDamage({ message, token: targetToken, multiplier: 1 });
-            } else if (typeof message.applyDamage === "function") {
-                await message.applyDamage({ token: targetToken, multiplier: 1 });
-            } else {
-                console.warn(TAG, "Could not find a damage application method on this version of PF2e.");
-                console.log(TAG, "Available game.pf2e keys:", Object.keys(game.pf2e ?? {}));
-            }
+            // actor.applyDamage() takes an already-evaluated DamageRoll, applies IWR, and updates HP.
+            // This is the correct PF2e API — it does NOT re-calculate or re-roll damage.
+            await targetActor.applyDamage({
+                damage: damageRoll,
+                token: targetToken,
+                rollOptions: new Set(context.options ?? []),
+                outcome: context.outcome ?? null,
+            });
         } catch (err) {
             console.error(TAG, "Error applying damage:", err);
         }

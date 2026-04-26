@@ -36,6 +36,29 @@ Hooks.on("preCreateChatMessage", (message, data, options, userId) => {
     message.updateSource({ "flags.cerabonds.quickStrikes.targetUuid": _pendingQuickStrikeTarget });
 });
 
+// ─── Fix: resolve {actor}/{hpDamage} placeholders in damage-taken messages ────
+// In Foundry v14, game.i18n.format() only substitutes when given a translation
+// KEY — passing a pre-localized string (as PF2e master-branch applyDamage does)
+// leaves the {actor} / {hpDamage} tokens as literals.  Intercept before the
+// message is persisted and substitute them manually.
+Hooks.on("preCreateChatMessage", (message, data) => {
+    if (data.flags?.pf2e?.context?.type !== "damage-taken") return;
+    if (!data.content?.includes("{actor}") && !data.content?.includes("{hpDamage}")) return;
+
+    const scene = game.scenes.get(data.speaker?.scene ?? "");
+    const speakerToken = scene?.tokens.get(data.speaker?.token ?? "");
+    const actorName = (speakerToken?.name ?? data.speaker?.alias ?? "").replace(/[<>]/g, "");
+
+    const updates = data.flags.pf2e.appliedDamage?.updates ?? [];
+    const hpDamage = updates.reduce((sum, u) => sum + Math.abs(u?.value ?? 0), 0);
+
+    message.updateSource({
+        content: data.content
+            .replace(/\{actor\}/g, actorName)
+            .replace(/\{hpDamage\}/g, hpDamage),
+    });
+});
+
 // ─── Settings ─────────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
     game.settings.register("cerabonds-degrees-of-success", "quickStrikesEnabled", {

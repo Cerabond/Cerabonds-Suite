@@ -107,6 +107,18 @@ Hooks.on("createChatMessage", async (message) => {
         } catch (err) {
             console.error(TAG, "Error applying damage:", err);
         }
+
+        // Close any DamageModifierDialog that is still open after the roll.
+        // One may linger if the dialog opened after our renderDamageModifierDialog
+        // hook already fired (e.g. a second async render pass).
+        for (const app of Object.values(ui.windows)) {
+            if (app.constructor?.name === "DamageModifierDialog") {
+                console.log(TAG, "Closing lingering DamageModifierDialog");
+                app.isRolled = true;
+                app.close();
+            }
+        }
+
         return;
     }
 

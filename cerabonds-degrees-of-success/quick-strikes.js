@@ -5,20 +5,38 @@
 
 const TAG = "Cerabond's Quick Strikes |";
 
-// Tracks target token UUIDs whose next incoming damage-roll message should be auto-applied.
-const _quickStrikesPendingApply = new Set();
-
-// Set to true while we are auto-rolling damage so the modifier dialog is auto-submitted.
+// True while we are auto-rolling damage — used to gate the modifier dialog hook.
 let _quickStrikeRollingDamage = false;
 
-// Auto-submit the damage modifier dialog (situational bonuses) when triggered by a quick-strike.
+// The target token UUID for the damage roll currently in progress.
+// Set before strike.damage/critical is called; cleared in the finally block.
+let _pendingQuickStrikeTarget = null;
+
+// ─── Dialog: auto-confirm the DamageModifierDialog ───────────────────────────
+// DamageDamageContext has no `skipDialog` field for NPC attacks, so the dialog
+// always appears even when we pass skipDialog:true to strike.damage(). We
+// dismiss it here by setting isRolled=true before calling close(), which causes
+// the dialog's internal Promise to resolve with `true` (roll confirmed).
 Hooks.on("renderDamageModifierDialog", (app) => {
     if (!_quickStrikeRollingDamage) return;
-    // app.element is a jQuery object in V1 Applications; [0] gets the native DOM element.
-    // The roll button is "button.roll" with a native addEventListener — .click() triggers it.
-    app.element[0]?.querySelector("button.roll")?.click();
+    console.log(TAG, "Auto-dismissing DamageModifierDialog");
+    app.isRolled = true;
+    app.close();
 });
 
+// ─── Tag: stamp the damage-roll chat message with our target UUID ─────────────
+// For NPC attacks, PF2e may not populate context.target.token on the damage
+// message even when we pass a target to strike.damage(). To work around this
+// we stamp the message with our own flag before it reaches the database.
+Hooks.on("preCreateChatMessage", (message, data, options, userId) => {
+    if (!_quickStrikeRollingDamage || !_pendingQuickStrikeTarget) return;
+    const pf2eContext = data.flags?.pf2e?.context;
+    if (pf2eContext?.type !== "damage-roll") return;
+    console.log(TAG, "Stamping damage-roll message → target:", _pendingQuickStrikeTarget);
+    message.updateSource({ "flags.cerabonds.quickStrikes.targetUuid": _pendingQuickStrikeTarget });
+});
+
+// ─── Settings ─────────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
     game.settings.register("cerabonds-degrees-of-success", "quickStrikesEnabled", {
         name: "Quick Strikes: Auto-Roll Damage",
@@ -30,92 +48,82 @@ Hooks.once("init", () => {
     });
 });
 
+// ─── Main hook ────────────────────────────────────────────────────────────────
 Hooks.on("createChatMessage", async (message) => {
-    // Only the client who made the roll handles this to prevent duplicates
+    // Only the rolling client acts to prevent duplicate actions across connected users.
     if (message.author?.id !== game.user.id) return;
-
-    // Respect the per-client toggle
     if (!game.settings.get("cerabonds-degrees-of-success", "quickStrikesEnabled")) return;
 
-    const context = message.flags?.pf2e?.context;
-    if (!context) return;
+    const pf2eContext = message.flags?.pf2e?.context;
 
-    // === DAMAGE ROLL: auto-apply if queued by a quick-strike attack ===
-    if (context.type === "damage-roll") {
-        const targetUuid = context.target?.token;
-        if (!targetUuid || !_quickStrikesPendingApply.has(targetUuid)) return;
-        _quickStrikesPendingApply.delete(targetUuid);
+    // ── Damage-roll branch: apply damage if this message was stamped by us ──
+    const targetUuid = message.flags?.cerabonds?.quickStrikes?.targetUuid;
+    if (targetUuid && pf2eContext?.type === "damage-roll") {
+        console.log(TAG, "Auto-applying damage → target:", targetUuid);
 
         const targetToken = await fromUuid(targetUuid);
-        if (!targetToken) { console.warn(TAG, "Could not resolve target for damage application:", targetUuid); return; }
+        if (!targetToken) { console.warn(TAG, "Could not resolve target token:", targetUuid); return; }
 
         const targetActor = targetToken.actor;
         if (!targetActor) { console.warn(TAG, "Target token has no actor:", targetUuid); return; }
 
         const damageRoll = message.rolls[0];
-        if (!damageRoll) { console.warn(TAG, "No damage roll found in message"); return; }
+        if (!damageRoll) { console.warn(TAG, "No damage roll in message"); return; }
 
         try {
-            // actor.applyDamage() takes an already-evaluated DamageRoll, applies IWR, and updates HP.
-            // This is the correct PF2e API — it does NOT re-calculate or re-roll damage.
+            // ActorPF2e.applyDamage() accepts an already-evaluated DamageRoll,
+            // applies IWR (immunities/resistances/weaknesses), and updates HP.
+            // It does NOT re-calculate or show any new dialog.
             await targetActor.applyDamage({
                 damage: damageRoll,
                 token: targetToken,
-                rollOptions: new Set(context.options ?? []),
-                outcome: context.outcome ?? null,
+                rollOptions: new Set(pf2eContext.options ?? []),
+                outcome: pf2eContext.outcome ?? null,
             });
+            console.log(TAG, "Damage applied successfully");
         } catch (err) {
             console.error(TAG, "Error applying damage:", err);
         }
         return;
     }
 
-    // === ATTACK ROLL: check for hit/crit and trigger damage ===
+    // ── Attack-roll branch: detect hit/crit, then roll damage ──
+    if (!pf2eContext) return;
     if (!message.isRoll) return;
-    if (context.type !== "attack-roll" || context.action !== "strike") return;
+    if (pf2eContext.type !== "attack-roll" || pf2eContext.action !== "strike") return;
 
-    // Degree of success: 2 = Success (hit), 3 = Critical Success (critical hit)
+    // degreeOfSuccess: 2 = hit, 3 = critical hit
     const degreeOfSuccess = message.rolls[0]?.options?.degreeOfSuccess;
     if (degreeOfSuccess !== 2 && degreeOfSuccess !== 3) return;
 
-    // Resolve the attacking actor via the full origin UUID (Scene.x.Token.x.Actor.x)
-    const actorUuid = context.origin?.actor;
+    const actorUuid = pf2eContext.origin?.actor;
     if (!actorUuid) return;
     const actor = await fromUuid(actorUuid);
-    if (!actor) { console.warn(TAG, "Could not resolve actor from UUID:", actorUuid); return; }
+    if (!actor) { console.warn(TAG, "Could not resolve actor:", actorUuid); return; }
 
-    // Extract item ID from identifier (format: "itemId.slug.attackType")
-    const itemId = context.identifier?.split(".")[0];
+    // Item ID is the first segment of the identifier ("itemId.slug.melee|ranged")
+    const itemId = pf2eContext.identifier?.split(".")[0];
     if (!itemId) return;
 
-    // Find the matching strike action on the actor
     const strikes = actor.system.actions;
-    if (!Array.isArray(strikes) || strikes.length === 0) { console.warn(TAG, "No actions array found on actor"); return; }
+    if (!Array.isArray(strikes) || strikes.length === 0) { console.warn(TAG, "No actions on actor"); return; }
 
     const strike = strikes.find(s => s.item?.id === itemId);
-    if (!strike) {
-        console.warn(TAG, `No strike action found for item id "${itemId}" on actor "${actor.name}"`);
-        return;
-    }
+    if (!strike) { console.warn(TAG, `No strike for item "${itemId}" on "${actor.name}"`); return; }
 
-    const targetTokenUuid = context.target?.token;
+    const targetTokenUuid = pf2eContext.target?.token;
     let targetTokenDoc = null;
-    if (targetTokenUuid) {
-        targetTokenDoc = await fromUuid(targetTokenUuid);
-    }
-
-    // Queue the target for auto-apply when the damage message arrives
-    if (targetTokenUuid) _quickStrikesPendingApply.add(targetTokenUuid);
+    if (targetTokenUuid) targetTokenDoc = await fromUuid(targetTokenUuid);
 
     const outcomeLabel = degreeOfSuccess === 3 ? "critical hit" : "hit";
-    console.log(
-        TAG,
+    console.log(TAG,
         `${actor.name} scored a ${outcomeLabel} with "${strike.item?.name}"` +
         (targetTokenDoc ? ` against ${targetTokenDoc.name}` : "") +
         " — rolling and applying damage automatically."
     );
 
     _quickStrikeRollingDamage = true;
+    _pendingQuickStrikeTarget = targetTokenUuid ?? null;
     try {
         if (degreeOfSuccess === 3) {
             await strike.critical({ target: targetTokenDoc, skipDialog: true });
@@ -123,10 +131,9 @@ Hooks.on("createChatMessage", async (message) => {
             await strike.damage({ target: targetTokenDoc, skipDialog: true });
         }
     } catch (err) {
-        // If the roll itself fails, clean up the pending entry
-        if (targetTokenUuid) _quickStrikesPendingApply.delete(targetTokenUuid);
         console.error(TAG, "Error during automatic damage roll:", err);
     } finally {
         _quickStrikeRollingDamage = false;
+        _pendingQuickStrikeTarget = null;
     }
 });

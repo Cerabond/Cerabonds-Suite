@@ -12,6 +12,19 @@ let _quickStrikeRollingDamage = false;
 // Set before strike.damage/critical is called; cleared in the finally block.
 let _pendingQuickStrikeTarget = null;
 
+// ─── Helper: hide/show .damage-dialog windows via an injected <style> tag ──────
+function _setDamageDialogHidden(hidden) {
+    const id = "cerabonds-qs-hide-damage-dialog";
+    if (hidden && !document.getElementById(id)) {
+        const style = document.createElement("style");
+        style.id = id;
+        style.textContent = ".damage-dialog.dialog { visibility: hidden !important; }";
+        document.head.appendChild(style);
+    } else if (!hidden) {
+        document.getElementById(id)?.remove();
+    }
+}
+
 // ─── Dialog: auto-confirm the DamageModifierDialog ───────────────────────────
 // DamageDamageContext has no `skipDialog` field for NPC attacks, so the dialog
 // always appears even when we pass skipDialog:true to strike.damage(). We
@@ -118,6 +131,7 @@ Hooks.on("createChatMessage", async (message) => {
                 app.close();
             }
         }
+        _setDamageDialogHidden(false);
 
         return;
     }
@@ -159,6 +173,7 @@ Hooks.on("createChatMessage", async (message) => {
 
     _quickStrikeRollingDamage = true;
     _pendingQuickStrikeTarget = targetTokenUuid ?? null;
+    _setDamageDialogHidden(true);
     try {
         if (degreeOfSuccess === 3) {
             await strike.critical({ target: targetTokenDoc, skipDialog: true });

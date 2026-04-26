@@ -14,9 +14,9 @@ let _quickStrikeRollingDamage = false;
 // Auto-submit the damage modifier dialog (situational bonuses) when triggered by a quick-strike.
 Hooks.on("renderDamageModifierDialog", (app) => {
     if (!_quickStrikeRollingDamage) return;
-    // Call the Application's own submit() rather than touching the HTML,
-    // which avoids any risk of triggering native browser form navigation.
-    app.submit();
+    // app.element is a jQuery object in V1 Applications; [0] gets the native DOM element.
+    // The roll button is "button.roll" with a native addEventListener — .click() triggers it.
+    app.element[0]?.querySelector("button.roll")?.click();
 });
 
 Hooks.once("init", () => {

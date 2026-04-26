@@ -14,7 +14,8 @@
     "auto-hide.js",
     "auto-switch.js",
     "force-chat-tab.js",
-    "unknown-name.js"
+    "unknown-name.js",
+    "quick-strikes.js"
   ],
   "manifest": "https://raw.githubusercontent.com/Cerabond/Cerabonds-Suite/refs/heads/master/cerabonds-degrees-of-success/module.json",
   "download": "https://github.com/Cerabond/Cerabonds-Suite/raw/refs/heads/master/cerabonds-degrees-of-success/module.zip",

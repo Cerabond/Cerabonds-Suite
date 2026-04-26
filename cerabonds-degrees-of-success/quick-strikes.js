@@ -12,16 +12,11 @@ let _quickStrikeRollingDamage = false;
 // Set before strike.damage/critical is called; cleared in the finally block.
 let _pendingQuickStrikeTarget = null;
 
-// ─── Helper: hide/show .damage-dialog windows via an injected <style> tag ──────
+// ─── Helper: hide/show .damage-dialog windows via direct element style ──────────
+const _DAMAGE_DIALOG_SELECTOR = ".roll-modifiers-dialog.damage-dialog.dialog";
 function _setDamageDialogHidden(hidden) {
-    const id = "cerabonds-qs-hide-damage-dialog";
-    if (hidden && !document.getElementById(id)) {
-        const style = document.createElement("style");
-        style.id = id;
-        style.textContent = ".damage-dialog.dialog { visibility: hidden !important; }";
-        document.head.appendChild(style);
-    } else if (!hidden) {
-        document.getElementById(id)?.remove();
+    for (const el of document.querySelectorAll(_DAMAGE_DIALOG_SELECTOR)) {
+        el.style.visibility = hidden ? "hidden" : "";
     }
 }
 
@@ -30,9 +25,13 @@ function _setDamageDialogHidden(hidden) {
 // always appears even when we pass skipDialog:true to strike.damage(). We
 // dismiss it here by setting isRolled=true before calling close(), which causes
 // the dialog's internal Promise to resolve with `true` (roll confirmed).
-Hooks.on("renderDamageModifierDialog", (app) => {
+Hooks.on("renderDamageModifierDialog", (app, html) => {
     if (!_quickStrikeRollingDamage) return;
     console.log(TAG, "Auto-dismissing DamageModifierDialog");
+    // Hide the element immediately so it never appears on screen.
+    const el = html instanceof jQuery ? html[0] : html;
+    const windowEl = el?.closest?.(_DAMAGE_DIALOG_SELECTOR) ?? el?.querySelector?.(_DAMAGE_DIALOG_SELECTOR) ?? el;
+    if (windowEl) windowEl.style.visibility = "hidden";
     app.isRolled = true;
     app.close();
 });

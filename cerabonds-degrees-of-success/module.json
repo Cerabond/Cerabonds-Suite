@@ -3,7 +3,7 @@
   "name": "cerabonds-degrees-of-success",
   "title": "Cerabond's Suite",
   "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     {
       "name": "Cerabond"
@@ -21,6 +21,6 @@
   "download": "https://github.com/Cerabond/Cerabonds-Suite/raw/refs/heads/master/cerabonds-degrees-of-success/module.zip",
   "compatibility": {
     "minimum": "13",
-    "verified": "13"
+    "verified": "14"
   }
 }

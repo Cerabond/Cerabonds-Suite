@@ -12,7 +12,32 @@ let _quickStrikeRollingDamage = false;
 // Set before strike.damage/critical is called; cleared in the finally block.
 let _pendingQuickStrikeTarget = null;
 
-// ─── Dialog: auto-confirm the DamageModifierDialog ───────────────────────────
+// ─── Dialog: suppress the DamageModifierDialog before it is ever painted ─────
+// A MutationObserver callback fires as a microtask — after a DOM insertion but
+// before the browser renders the next frame — so hiding the element here means
+// it is never visible on screen.
+let _dialogObserver = null;
+
+function _startHidingDamageDialogs() {
+    if (_dialogObserver) return;
+    _dialogObserver = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+                if (node.nodeType !== 1) continue;
+                if (node.classList.contains("damage-dialog") && node.classList.contains("roll-modifiers-dialog")) {
+                    node.style.setProperty("display", "none", "important");
+                }
+            }
+        }
+    });
+    _dialogObserver.observe(document.body, { childList: true });
+}
+
+function _stopHidingDamageDialogs() {
+    _dialogObserver?.disconnect();
+    _dialogObserver = null;
+}
+
 Hooks.on("renderDamageModifierDialog", (app) => {
     if (!_quickStrikeRollingDamage) return;
     console.log(TAG, "Auto-dismissing DamageModifierDialog");
@@ -73,14 +98,8 @@ Hooks.on("createChatMessage", async (message) => {
     if (message.author?.id !== game.user.id) return;
     if (!game.settings.get("cerabonds-degrees-of-success", "quickStrikesEnabled")) return;
 
-    // Inject a style tag immediately (before any awaits) to suppress any
-    // DamageModifierDialog that appears during this processing cycle.
-    if (!document.getElementById("cerabonds-qs-hide-damage-dialog")) {
-        const _hideStyle = document.createElement("style");
-        _hideStyle.id = "cerabonds-qs-hide-damage-dialog";
-        _hideStyle.textContent = ".app.window-app.roll-modifiers-dialog, .app.window-app.damage-dialog { display: none !important; }";
-        document.head.appendChild(_hideStyle);
-    }
+    // Start intercepting any DamageModifierDialog before it can be painted.
+    _startHidingDamageDialogs();
 
     const pf2eContext = message.flags?.pf2e?.context;
 
@@ -123,7 +142,7 @@ Hooks.on("createChatMessage", async (message) => {
                 app.close();
             }
         }
-        document.getElementById("cerabonds-qs-hide-damage-dialog")?.remove();
+        _stopHidingDamageDialogs();
 
         return;
     }
@@ -176,6 +195,6 @@ Hooks.on("createChatMessage", async (message) => {
     } finally {
         _quickStrikeRollingDamage = false;
         _pendingQuickStrikeTarget = null;
-        document.getElementById("cerabonds-qs-hide-damage-dialog")?.remove();
+        _stopHidingDamageDialogs();
     }
 });

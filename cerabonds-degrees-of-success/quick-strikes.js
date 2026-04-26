@@ -28,44 +28,30 @@ Hooks.on("createChatMessage", async (message) => {
 
     const context = message.flags.pf2e.context;
 
-    // --- DIAGNOSTIC: log every attack-adjacent message so we can inspect the shape ---
-    if (message.flags?.pf2e?.context) {
-        console.log(TAG, "PF2e roll message received — context type:", context?.type);
-        console.log(TAG, "Full flags.pf2e.context:", JSON.parse(JSON.stringify(context)));
-        console.log(TAG, "rolls[0] options:", JSON.parse(JSON.stringify(message.rolls[0]?.options ?? {})));
-    }
-    // ---------------------------------------------------------------------------------
-
-    if (context?.type !== "strike-attack-roll") return;
+    // Must be a strike attack roll (type is "attack-roll", action is "strike")
+    if (context?.type !== "attack-roll" || context?.action !== "strike") return;
 
     // Degree of success: 2 = Success (hit), 3 = Critical Success (critical hit)
     const degreeOfSuccess = message.rolls[0]?.options?.degreeOfSuccess;
-    console.log(TAG, "degreeOfSuccess:", degreeOfSuccess);
     if (degreeOfSuccess !== 2 && degreeOfSuccess !== 3) return;
 
-    // Resolve the attacking actor from its UUID
-    const actorUuid = context.actor;
-    console.log(TAG, "actorUuid:", actorUuid);
+    // Resolve the attacking actor via the full origin UUID (Scene.x.Token.x.Actor.x)
+    const actorUuid = context.origin?.actor;
     if (!actorUuid) return;
     const actor = await fromUuid(actorUuid);
     if (!actor) { console.warn(TAG, "Could not resolve actor from UUID:", actorUuid); return; }
 
-    // Resolve the weapon / unarmed attack item from its UUID
-    const itemUuid = context.item;
-    console.log(TAG, "itemUuid:", itemUuid);
-    if (!itemUuid) return;
-    const item = await fromUuid(itemUuid);
-    if (!item) { console.warn(TAG, "Could not resolve item from UUID:", itemUuid); return; }
+    // Extract item ID from identifier (format: "itemId.slug.attackType")
+    const itemId = context.identifier?.split(".")[0];
+    if (!itemId) return;
 
     // Find the matching strike action on the actor
     const strikes = actor.system.actions;
-    console.log(TAG, "actor.system.actions:", strikes);
     if (!Array.isArray(strikes) || strikes.length === 0) { console.warn(TAG, "No actions array found on actor"); return; }
 
-    const strike = strikes.find(s => s.item?.id === item.id);
+    const strike = strikes.find(s => s.item?.id === itemId);
     if (!strike) {
-        console.warn(TAG, `No strike action found for item "${item.name}" (id: ${item.id}) on actor "${actor.name}"`);
-        console.log(TAG, "Available strike item ids:", strikes.map(s => s.item?.id));
+        console.warn(TAG, `No strike action found for item id "${itemId}" on actor "${actor.name}"`);
         return;
     }
 
@@ -79,7 +65,7 @@ Hooks.on("createChatMessage", async (message) => {
     const outcomeLabel = degreeOfSuccess === 3 ? "critical hit" : "hit";
     console.log(
         TAG,
-        `${actor.name} scored a ${outcomeLabel} with "${item.name}"` +
+        `${actor.name} scored a ${outcomeLabel} with "${strike.item?.name}"` +
         (targetTokenDoc ? ` against ${targetTokenDoc.name}` : "") +
         " — rolling damage automatically."
     );

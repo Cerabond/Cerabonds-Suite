@@ -12,19 +12,11 @@ const _quickStrikesPendingApply = new Set();
 let _quickStrikeRollingDamage = false;
 
 // Auto-submit the damage modifier dialog (situational bonuses) when triggered by a quick-strike.
-Hooks.on("renderDamageModifierDialog", (app, html) => {
+Hooks.on("renderDamageModifierDialog", (app) => {
     if (!_quickStrikeRollingDamage) return;
-    // html is a jQuery object in the V1 Application framework
-    const root = html instanceof HTMLElement ? html : html[0];
-    const form = root?.querySelector('form');
-    if (form) {
-        // requestSubmit fires the form's submit event, which PF2e listens to internally
-        form.requestSubmit();
-    } else {
-        // Fallback: try any button in the dialog footer
-        const btn = root?.querySelector('button[type="submit"], button[name="submit"], .dialog-button, button');
-        btn?.click();
-    }
+    // Call the Application's own submit() rather than touching the HTML,
+    // which avoids any risk of triggering native browser form navigation.
+    app.submit();
 });
 
 Hooks.once("init", () => {

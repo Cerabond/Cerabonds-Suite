@@ -8,6 +8,17 @@ const TAG = "Cerabond's Quick Strikes |";
 // Tracks target token UUIDs whose next incoming damage-roll message should be auto-applied.
 const _quickStrikesPendingApply = new Set();
 
+// Set to true while we are auto-rolling damage so the modifier dialog is auto-submitted.
+let _quickStrikeRollingDamage = false;
+
+// Auto-submit the damage modifier dialog (situational bonuses) when triggered by a quick-strike.
+Hooks.on("renderDamageModifierDialog", (app, html) => {
+    if (!_quickStrikeRollingDamage) return;
+    const root = html instanceof HTMLElement ? html : html[0];
+    const submitBtn = root?.querySelector('button[type="submit"], button[data-action="roll"]');
+    if (submitBtn) submitBtn.click();
+});
+
 Hooks.once("init", () => {
     game.settings.register("cerabonds-degrees-of-success", "quickStrikesEnabled", {
         name: "Quick Strikes: Auto-Roll Damage",
@@ -98,6 +109,7 @@ Hooks.on("createChatMessage", async (message) => {
         " — rolling and applying damage automatically."
     );
 
+    _quickStrikeRollingDamage = true;
     try {
         if (degreeOfSuccess === 3) {
             await strike.critical({ target: targetTokenDoc, skipDialog: true });
@@ -108,5 +120,7 @@ Hooks.on("createChatMessage", async (message) => {
         // If the roll itself fails, clean up the pending entry
         if (targetTokenUuid) _quickStrikesPendingApply.delete(targetTokenUuid);
         console.error(TAG, "Error during automatic damage roll:", err);
+    } finally {
+        _quickStrikeRollingDamage = false;
     }
 });

@@ -12,26 +12,10 @@ let _quickStrikeRollingDamage = false;
 // Set before strike.damage/critical is called; cleared in the finally block.
 let _pendingQuickStrikeTarget = null;
 
-// ─── Helper: hide/show .damage-dialog windows via direct element style ──────────
-const _DAMAGE_DIALOG_SELECTOR = ".roll-modifiers-dialog.damage-dialog.dialog";
-function _setDamageDialogHidden(hidden) {
-    for (const el of document.querySelectorAll(_DAMAGE_DIALOG_SELECTOR)) {
-        el.style.visibility = hidden ? "hidden" : "";
-    }
-}
-
 // ─── Dialog: auto-confirm the DamageModifierDialog ───────────────────────────
-// DamageDamageContext has no `skipDialog` field for NPC attacks, so the dialog
-// always appears even when we pass skipDialog:true to strike.damage(). We
-// dismiss it here by setting isRolled=true before calling close(), which causes
-// the dialog's internal Promise to resolve with `true` (roll confirmed).
-Hooks.on("renderDamageModifierDialog", (app, html) => {
+Hooks.on("renderDamageModifierDialog", (app) => {
     if (!_quickStrikeRollingDamage) return;
     console.log(TAG, "Auto-dismissing DamageModifierDialog");
-    // Hide the element immediately so it never appears on screen.
-    const el = html instanceof jQuery ? html[0] : html;
-    const windowEl = el?.closest?.(_DAMAGE_DIALOG_SELECTOR) ?? el?.querySelector?.(_DAMAGE_DIALOG_SELECTOR) ?? el;
-    if (windowEl) windowEl.style.visibility = "hidden";
     app.isRolled = true;
     app.close();
 });
@@ -130,7 +114,7 @@ Hooks.on("createChatMessage", async (message) => {
                 app.close();
             }
         }
-        _setDamageDialogHidden(false);
+        document.getElementById("cerabonds-qs-hide-damage-dialog")?.remove();
 
         return;
     }
@@ -172,7 +156,10 @@ Hooks.on("createChatMessage", async (message) => {
 
     _quickStrikeRollingDamage = true;
     _pendingQuickStrikeTarget = targetTokenUuid ?? null;
-    _setDamageDialogHidden(true);
+    const _hideStyle = document.createElement("style");
+    _hideStyle.id = "cerabonds-qs-hide-damage-dialog";
+    _hideStyle.textContent = ".app.window-app.roll-modifiers-dialog, .app.window-app.damage-dialog { display: none !important; }";
+    document.head.appendChild(_hideStyle);
     try {
         if (degreeOfSuccess === 3) {
             await strike.critical({ target: targetTokenDoc, skipDialog: true });

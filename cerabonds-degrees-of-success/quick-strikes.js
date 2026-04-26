@@ -73,6 +73,15 @@ Hooks.on("createChatMessage", async (message) => {
     if (message.author?.id !== game.user.id) return;
     if (!game.settings.get("cerabonds-degrees-of-success", "quickStrikesEnabled")) return;
 
+    // Inject a style tag immediately (before any awaits) to suppress any
+    // DamageModifierDialog that appears during this processing cycle.
+    if (!document.getElementById("cerabonds-qs-hide-damage-dialog")) {
+        const _hideStyle = document.createElement("style");
+        _hideStyle.id = "cerabonds-qs-hide-damage-dialog";
+        _hideStyle.textContent = ".app.window-app.roll-modifiers-dialog, .app.window-app.damage-dialog { display: none !important; }";
+        document.head.appendChild(_hideStyle);
+    }
+
     const pf2eContext = message.flags?.pf2e?.context;
 
     // ── Damage-roll branch: apply damage if this message was stamped by us ──
@@ -156,10 +165,6 @@ Hooks.on("createChatMessage", async (message) => {
 
     _quickStrikeRollingDamage = true;
     _pendingQuickStrikeTarget = targetTokenUuid ?? null;
-    const _hideStyle = document.createElement("style");
-    _hideStyle.id = "cerabonds-qs-hide-damage-dialog";
-    _hideStyle.textContent = ".app.window-app.roll-modifiers-dialog, .app.window-app.damage-dialog { display: none !important; }";
-    document.head.appendChild(_hideStyle);
     try {
         if (degreeOfSuccess === 3) {
             await strike.critical({ target: targetTokenDoc, skipDialog: true });
@@ -171,5 +176,6 @@ Hooks.on("createChatMessage", async (message) => {
     } finally {
         _quickStrikeRollingDamage = false;
         _pendingQuickStrikeTarget = null;
+        document.getElementById("cerabonds-qs-hide-damage-dialog")?.remove();
     }
 });

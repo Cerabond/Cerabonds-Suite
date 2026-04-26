@@ -1,14 +1,17 @@
 // Cerabond's Quick Strikes
 // When a weapon or unarmed attack roll against a targeted token results in a hit or
-// critical hit, automatically triggers the appropriate damage roll immediately.
+// critical hit, automatically rolls damage and applies it to the target immediately.
 // The rolling client handles damage to prevent duplicate rolls from multiple connected users.
 
 const TAG = "Cerabond's Quick Strikes |";
 
+// Tracks target token UUIDs whose next incoming damage-roll message should be auto-applied.
+const _quickStrikesPendingApply = new Set();
+
 Hooks.once("init", () => {
     game.settings.register("cerabonds-degrees-of-success", "quickStrikesEnabled", {
         name: "Quick Strikes: Auto-Roll Damage",
-        hint: "Automatically roll damage when your attack roll results in a hit or critical hit.",
+        hint: "Automatically roll and apply damage when your attack roll results in a hit or critical hit.",
         scope: "client",
         config: true,
         type: Boolean,
@@ -17,19 +20,42 @@ Hooks.once("init", () => {
 });
 
 Hooks.on("createChatMessage", async (message) => {
-    // Only the client who made the roll triggers damage to prevent duplicate applications
+    // Only the client who made the roll handles this to prevent duplicates
     if (message.author?.id !== game.user.id) return;
 
     // Respect the per-client toggle
     if (!game.settings.get("cerabonds-degrees-of-success", "quickStrikesEnabled")) return;
 
-    // Require a roll message with PF2e context flags
-    if (!message.isRoll || !message.flags?.pf2e) return;
+    const context = message.flags?.pf2e?.context;
+    if (!context) return;
 
-    const context = message.flags.pf2e.context;
+    // === DAMAGE ROLL: auto-apply if queued by a quick-strike attack ===
+    if (context.type === "damage-roll") {
+        const targetUuid = context.target?.token;
+        if (!targetUuid || !_quickStrikesPendingApply.has(targetUuid)) return;
+        _quickStrikesPendingApply.delete(targetUuid);
 
-    // Must be a strike attack roll (type is "attack-roll", action is "strike")
-    if (context?.type !== "attack-roll" || context?.action !== "strike") return;
+        const targetToken = await fromUuid(targetUuid);
+        if (!targetToken) { console.warn(TAG, "Could not resolve target for damage application:", targetUuid); return; }
+
+        try {
+            if (game.pf2e?.Damage?.applyDamage) {
+                await game.pf2e.Damage.applyDamage({ message, token: targetToken, multiplier: 1 });
+            } else if (typeof message.applyDamage === "function") {
+                await message.applyDamage({ token: targetToken, multiplier: 1 });
+            } else {
+                console.warn(TAG, "Could not find a damage application method on this version of PF2e.");
+                console.log(TAG, "Available game.pf2e keys:", Object.keys(game.pf2e ?? {}));
+            }
+        } catch (err) {
+            console.error(TAG, "Error applying damage:", err);
+        }
+        return;
+    }
+
+    // === ATTACK ROLL: check for hit/crit and trigger damage ===
+    if (!message.isRoll) return;
+    if (context.type !== "attack-roll" || context.action !== "strike") return;
 
     // Degree of success: 2 = Success (hit), 3 = Critical Success (critical hit)
     const degreeOfSuccess = message.rolls[0]?.options?.degreeOfSuccess;
@@ -55,28 +81,32 @@ Hooks.on("createChatMessage", async (message) => {
         return;
     }
 
-    // Resolve the target token document for IWR (immunity/weakness/resistance) calculations
     const targetTokenUuid = context.target?.token;
     let targetTokenDoc = null;
     if (targetTokenUuid) {
         targetTokenDoc = await fromUuid(targetTokenUuid);
     }
 
+    // Queue the target for auto-apply when the damage message arrives
+    if (targetTokenUuid) _quickStrikesPendingApply.add(targetTokenUuid);
+
     const outcomeLabel = degreeOfSuccess === 3 ? "critical hit" : "hit";
     console.log(
         TAG,
         `${actor.name} scored a ${outcomeLabel} with "${strike.item?.name}"` +
         (targetTokenDoc ? ` against ${targetTokenDoc.name}` : "") +
-        " — rolling damage automatically."
+        " — rolling and applying damage automatically."
     );
 
     try {
         if (degreeOfSuccess === 3) {
-            await strike.critical({ target: targetTokenDoc });
+            await strike.critical({ target: targetTokenDoc, skipDialog: true });
         } else {
-            await strike.damage({ target: targetTokenDoc });
+            await strike.damage({ target: targetTokenDoc, skipDialog: true });
         }
     } catch (err) {
+        // If the roll itself fails, clean up the pending entry
+        if (targetTokenUuid) _quickStrikesPendingApply.delete(targetTokenUuid);
         console.error(TAG, "Error during automatic damage roll:", err);
     }
 });

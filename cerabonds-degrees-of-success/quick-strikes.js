@@ -4,6 +4,7 @@
 // The rolling client handles damage to prevent duplicate rolls from multiple connected users.
 
 const TAG = "Cerabond's Quick Strikes |";
+const _SOCKET = "module.cerabonds-degrees-of-success";
 
 // True while we are auto-rolling damage — used to gate the modifier dialog hook.
 let _quickStrikeRollingDamage = false;
@@ -80,6 +81,45 @@ Hooks.on("preCreateChatMessage", (message, data) => {
     });
 });
 
+// ─── Socket: GM-side handler for delegated damage application ───────────────
+// Players cannot modify tokens they don't own, so when permission is absent
+// we emit a socket message and let the active GM apply the damage instead.
+// This mirrors the save/elevate/restore pattern: we "note" the missing
+// permission, "elevate" by delegating to the GM, and the GM's full access
+// means nothing needs to be restored afterward.
+Hooks.once("ready", () => {
+    game.socket.on(_SOCKET, async (data) => {
+        // Only the first active GM handles the request to avoid duplicate application.
+        if (!game.user.isGM) return;
+        if (game.users.activeGM?.id !== game.user.id) return;
+        if (data.type !== "quickStrikeApplyDamage") return;
+
+        const targetToken = await fromUuid(data.targetUuid);
+        if (!targetToken) { console.warn(TAG, "[GM] Could not resolve target:", data.targetUuid); return; }
+        const targetActor = targetToken.actor;
+        if (!targetActor) { console.warn(TAG, "[GM] No actor on target:", data.targetUuid); return; }
+
+        const message = game.messages.get(data.messageId);
+        if (!message) { console.warn(TAG, "[GM] Message not found:", data.messageId); return; }
+        const damageRoll = message.rolls[0];
+        if (!damageRoll) { console.warn(TAG, "[GM] No damage roll in message:", data.messageId); return; }
+
+        const pf2eContext = message.flags?.pf2e?.context;
+        console.log(TAG, "[GM] Applying delegated damage → target:", data.targetUuid);
+        try {
+            await targetActor.applyDamage({
+                damage: damageRoll,
+                token: targetToken,
+                rollOptions: new Set(pf2eContext?.options ?? []),
+                outcome: pf2eContext?.outcome ?? null,
+            });
+            console.log(TAG, "[GM] Delegated damage applied successfully");
+        } catch (err) {
+            console.error(TAG, "[GM] Error applying delegated damage:", err);
+        }
+    });
+});
+
 // ─── Settings ─────────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
     game.settings.register("cerabonds-degrees-of-success", "quickStrikesEnabled", {
@@ -114,19 +154,32 @@ Hooks.on("createChatMessage", async (message) => {
         const damageRoll = message.rolls[0];
         if (!damageRoll) { console.warn(TAG, "No damage roll in message"); return; }
 
-        try {
-            // ActorPF2e.applyDamage() accepts an already-evaluated DamageRoll,
-            // applies IWR (immunities/resistances/weaknesses), and updates HP.
-            // It does NOT re-calculate or show any new dialog.
-            await targetActor.applyDamage({
-                damage: damageRoll,
-                token: targetToken,
-                rollOptions: new Set(pf2eContext.options ?? []),
-                outcome: pf2eContext.outcome ?? null,
+        // If this player owns the target they can apply damage directly.
+        // Otherwise delegate to the GM via socket — Foundry's security model
+        // prevents a client from granting itself permissions, so socket
+        // delegation is the correct "elevation" mechanism.
+        if (targetActor.canUserModify(game.user, "update")) {
+            try {
+                // ActorPF2e.applyDamage() accepts an already-evaluated DamageRoll,
+                // applies IWR (immunities/resistances/weaknesses), and updates HP.
+                // It does NOT re-calculate or show any new dialog.
+                await targetActor.applyDamage({
+                    damage: damageRoll,
+                    token: targetToken,
+                    rollOptions: new Set(pf2eContext.options ?? []),
+                    outcome: pf2eContext.outcome ?? null,
+                });
+                console.log(TAG, "Damage applied successfully");
+            } catch (err) {
+                console.error(TAG, "Error applying damage:", err);
+            }
+        } else {
+            console.log(TAG, "Player lacks modify permission — delegating damage application to GM via socket");
+            game.socket.emit(_SOCKET, {
+                type: "quickStrikeApplyDamage",
+                targetUuid,
+                messageId: message.id,
             });
-            console.log(TAG, "Damage applied successfully");
-        } catch (err) {
-            console.error(TAG, "Error applying damage:", err);
         }
 
         // Close any DamageModifierDialog that is still open after the roll.

@@ -98,9 +98,6 @@ Hooks.on("createChatMessage", async (message) => {
     if (message.author?.id !== game.user.id) return;
     if (!game.settings.get("cerabonds-degrees-of-success", "quickStrikesEnabled")) return;
 
-    // Start intercepting any DamageModifierDialog before it can be painted.
-    _startHidingDamageDialogs();
-
     const pf2eContext = message.flags?.pf2e?.context;
 
     // ── Damage-roll branch: apply damage if this message was stamped by us ──
@@ -184,6 +181,10 @@ Hooks.on("createChatMessage", async (message) => {
 
     _quickStrikeRollingDamage = true;
     _pendingQuickStrikeTarget = targetTokenUuid ?? null;
+    // Start intercepting any DamageModifierDialog before it can be painted.
+    // Must be started here (not at the top of the hook) so it doesn't leak
+    // and permanently suppress dialogs on non-qualifying messages.
+    _startHidingDamageDialogs();
     try {
         if (degreeOfSuccess === 3) {
             await strike.critical({ target: targetTokenDoc, skipDialog: true });

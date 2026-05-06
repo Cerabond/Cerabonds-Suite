@@ -154,11 +154,10 @@ Hooks.on("createChatMessage", async (message) => {
         const damageRoll = message.rolls[0];
         if (!damageRoll) { console.warn(TAG, "No damage roll in message"); return; }
 
-        // If this player owns the target they can apply damage directly.
-        // Otherwise delegate to the GM via socket — Foundry's security model
-        // prevents a client from granting itself permissions, so socket
-        // delegation is the correct "elevation" mechanism.
-        if (targetActor.canUserModify(game.user, "update")) {
+        // GMs apply damage directly. Players always delegate via socket because
+        // canUserModify() returns true client-side for some ActorDelta tokens but
+        // the server still rejects the write — so we cannot rely on it as a gate.
+        if (game.user.isGM) {
             try {
                 // ActorPF2e.applyDamage() accepts an already-evaluated DamageRoll,
                 // applies IWR (immunities/resistances/weaknesses), and updates HP.
@@ -174,7 +173,7 @@ Hooks.on("createChatMessage", async (message) => {
                 console.error(TAG, "Error applying damage:", err);
             }
         } else {
-            console.log(TAG, "Player lacks modify permission — delegating damage application to GM via socket");
+            console.log(TAG, "Non-GM player — delegating damage application to GM via socket");
             game.socket.emit(_SOCKET, {
                 type: "quickStrikeApplyDamage",
                 targetUuid,

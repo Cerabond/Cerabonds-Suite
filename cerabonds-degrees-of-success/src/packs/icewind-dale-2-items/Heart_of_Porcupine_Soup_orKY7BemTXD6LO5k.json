@@ -1,0 +1,101 @@
+{
+  "_id": "orKY7BemTXD6LO5k",
+  "img": "icons/weapons/swords/sword-guard-engraved-worn.webp",
+  "name": "Heart of Porcupine Soup",
+  "system": {
+    "ammo": null,
+    "baseItem": "longsword",
+    "bonus": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bulk": {
+      "value": 1
+    },
+    "category": "martial",
+    "containerId": null,
+    "damage": {
+      "damageType": "slashing",
+      "dice": 1,
+      "die": "d8"
+    },
+    "description": {
+      "value": "<p>You have no idea where this dwarven-forged blade came from, but clearly etched on its blade is \"Porcupine Soup.\" You're sure you've never seen it before, yet it feels strangely familiar when you hold it in your hand. The blade looks several generations old and bears numerous nicks and scratches, and radiates a faint chill. You have no idea how it came to bear your name.</p>\n<hr />\n<p>This <em>+1 striking @UUID[Compendium.pf2e.equipment-srd.Item.LJdbVTOZog39EEbi]{longsword}</em> is always cool to the touch. While wielding it, you gain resistance 1 to cold damage.</p>"
+    },
+    "expend": null,
+    "grade": null,
+    "group": "sword",
+    "hardness": 0,
+    "hp": {
+      "max": 0,
+      "value": 0
+    },
+    "level": {
+      "value": 4
+    },
+    "material": {
+      "grade": null,
+      "type": null
+    },
+    "price": {
+      "value": {
+        "gp": 100
+      }
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "quantity": 1,
+    "range": null,
+    "reload": {
+      "value": "-"
+    },
+    "rules": [
+      {
+        "key": "Resistance",
+        "type": "cold",
+        "value": 1
+      }
+    ],
+    "runes": {
+      "potency": 1,
+      "property": [],
+      "striking": 1
+    },
+    "size": "med",
+    "splashDamage": {
+      "value": 0
+    },
+    "traits": {
+      "rarity": "unique",
+      "value": [
+        "magical",
+        "versatile-p"
+      ]
+    },
+    "usage": {
+      "canBeAmmo": false,
+      "value": "held-in-one-hand"
+    },
+    "slug": "heart-of-porcupine-soup",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    },
+    "equipped": {
+      "carryType": "worn"
+    }
+  },
+  "type": "weapon",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!orKY7BemTXD6LO5k"
+}

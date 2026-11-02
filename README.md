@@ -6,7 +6,7 @@ Cerabond's Suite Improved includes Icewind Dale 2 content converted to PF2e. Eac
 
 | Compendium | Visible to | Contents |
 |---|---|---|
-| Icewind Dale 2 Items | GM only | Phaen's Robe of Rags, Houndstooth Collar, Whispering Staff, Blurring Draught |
+| Icewind Dale 2 Items | GM only | Phaen's Robe of Rags, Houndstooth Collar, Whispering Staff, Blurring Draught, Heart of Porcupine Soup |
 | Icewind Dale 2 Bestiary | GM only | Vghotan "Houndstooth", Ghotrag, Caballus, Vghotan's Hound, Goblin Elite, Goblin War Chanter |
 | Icewind Dale 2 Effects | Everyone | Effects for the items and creatures above, so players can apply them from chat links |
 

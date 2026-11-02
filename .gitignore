@@ -416,3 +416,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Compendium packs are built from src/packs by build-zip.ps1 and shipped inside module.zip
+*/packs/

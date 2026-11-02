@@ -2,8 +2,8 @@
   "id": "cerabonds-degrees-of-success",
   "name": "cerabonds-degrees-of-success",
   "title": "Cerabond's Suite Improved",
-  "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now.",
-  "version": "1.0.3",
+  "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now, plus a compendium of Icewind Dale 2 items.",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "Cerabond"
@@ -16,6 +16,20 @@
     "force-chat-tab.js",
     "unknown-name.js",
     "quick-strikes.js"
+  ],
+  "packs": [
+    {
+      "name": "icewind-dale-2-items",
+      "label": "Icewind Dale 2 Items",
+      "path": "packs/icewind-dale-2-items",
+      "type": "Item",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
   ],
   "manifest": "https://raw.githubusercontent.com/Cerabond/Cerabonds-Suite/refs/heads/master/cerabonds-degrees-of-success/module.json",
   "download": "https://github.com/Cerabond/Cerabonds-Suite/raw/refs/heads/master/cerabonds-degrees-of-success/module.zip",

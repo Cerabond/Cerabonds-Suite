@@ -1,0 +1,101 @@
+{
+  "_id": "IyIX4z1kMNCOEft2",
+  "img": "icons/equipment/chest/shirt-simple-tattered-grey.webp",
+  "name": "Phaen's Robe of Rags",
+  "system": {
+    "acBonus": 0,
+    "baseItem": "explorers-clothing",
+    "bulk": {
+      "value": 0.1
+    },
+    "category": "unarmored",
+    "checkPenalty": 0,
+    "containerId": null,
+    "description": {
+      "value": "<p>Phaen's robe is made of hundreds of ragged strips of cloth, and it looks more like something one would find on a beggar on the streets of Luskan than on a wizard. Despite its mangy appearance, however, a closer examination reveals that some magic has been woven into the cloth itself, so subtle it would be difficult for even an accomplished mage to detect the enchantments. The interior of the robe of rags appears to be lined with the pelt of a great bear, but despite its bulk, it's surprisingly light and warm, and it seems ideally suited to the Targos climate.</p>\n<hr />\n<p>This robe functions as @UUID[Compendium.pf2e.equipment-srd.Item.dDIPA1WE9ESF67EB]{explorer's clothing} that grants a +1 item bonus to AC. While wearing it, you gain resistance 3 to cold damage.</p>\n<p>The robe's magic is woven into the cloth itself, so it can't be etched with runes.</p>"
+    },
+    "dexCap": 5,
+    "grade": null,
+    "group": "cloth",
+    "hardness": 0,
+    "hp": {
+      "max": 0,
+      "value": 0
+    },
+    "level": {
+      "value": 5
+    },
+    "material": {
+      "grade": null,
+      "type": null
+    },
+    "price": {
+      "value": {
+        "gp": 160
+      }
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "quantity": 1,
+    "rules": [
+      {
+        "itemId": "{item|id}",
+        "key": "ItemAlteration",
+        "mode": "add",
+        "property": "ac-bonus",
+        "value": 1
+      },
+      {
+        "key": "Resistance",
+        "type": "cold",
+        "value": 3
+      }
+    ],
+    "runes": {
+      "potency": 0,
+      "property": [],
+      "resilient": 0
+    },
+    "size": "med",
+    "specific": {
+      "material": {
+        "grade": null,
+        "type": null
+      },
+      "runes": {
+        "potency": 0,
+        "property": [],
+        "resilient": 0
+      }
+    },
+    "speedPenalty": 0,
+    "strength": null,
+    "traits": {
+      "rarity": "unique",
+      "value": [
+        "comfort",
+        "invested",
+        "magical"
+      ]
+    },
+    "slug": "phaens-robe-of-rags",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    },
+    "equipped": {
+      "carryType": "worn"
+    }
+  },
+  "type": "armor",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!IyIX4z1kMNCOEft2"
+}

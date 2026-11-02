@@ -1,0 +1,77 @@
+{
+  "_id": "IU3Q0WR9TQE8ouEj",
+  "img": "icons/consumables/potions/bottle-conical-fumes-green.webp",
+  "name": "Blurring Draught",
+  "system": {
+    "baseItem": null,
+    "bulk": {
+      "value": 0.1
+    },
+    "category": "potion",
+    "containerId": null,
+    "damage": null,
+    "description": {
+      "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p>\n<p>This murky, soot-gray draught leaves a taste of smoke behind. When you drink it, your form ripples like heat haze, and you're @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} for 1 minute.</p>\n<p>@UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.giDxJN60SCsN9Epl]{Effect: Blurring Draught}</p>"
+    },
+    "hardness": 0,
+    "hp": {
+      "max": 0,
+      "value": 0
+    },
+    "level": {
+      "value": 3
+    },
+    "material": {
+      "grade": null,
+      "type": null
+    },
+    "price": {
+      "per": 1,
+      "value": {
+        "gp": 12
+      }
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "quantity": 1,
+    "rules": [],
+    "size": "med",
+    "traits": {
+      "rarity": "common",
+      "value": [
+        "consumable",
+        "illusion",
+        "magical",
+        "potion",
+        "visual"
+      ]
+    },
+    "usage": {
+      "value": "held-in-one-hand"
+    },
+    "uses": {
+      "autoDestroy": true,
+      "max": 1,
+      "value": 1
+    },
+    "slug": "blurring-draught",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    },
+    "equipped": {
+      "carryType": "worn"
+    }
+  },
+  "type": "consumable",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!IU3Q0WR9TQE8ouEj"
+}

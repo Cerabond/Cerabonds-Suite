@@ -1,0 +1,936 @@
+{
+  "_id": "NC4liiQ0QWHpwM0X",
+  "img": "tokenizer/npc-images/ghotrag.Avatar.webp",
+  "items": [
+    {
+      "_id": "WbYWFecQIvVm1oSs",
+      "img": "icons/weapons/axes/axe-battle-black.webp",
+      "name": "Battle Axe",
+      "system": {
+        "ammo": null,
+        "baseItem": "battle-axe",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+          "damageType": "slashing",
+          "dice": 1,
+          "die": "d8"
+        },
+        "description": {
+          "value": "<p>These axes are designed explicitly as weapons, rather than tools. They typically weigh less, with a shaft reinforced with metal bands or bolts, and have a sharper blade, making them ideal for chopping limbs rather than wood.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "axe",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "sweep"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "slug": "battle-axe",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "held",
+          "handsHeld": 1,
+          "invested": null
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.War0uyLBx1jA0Ge7"
+      },
+      "effects": [],
+      "sort": 100000,
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.WbYWFecQIvVm1oSs"
+    },
+    {
+      "_id": "PZAVjc275mdBh4Bm",
+      "img": "icons/weapons/crossbows/crossbow-simple-black.webp",
+      "name": "Heavy Crossbow",
+      "system": {
+        "ammo": {
+          "baseType": "bolts",
+          "builtIn": false,
+          "capacity": 1
+        },
+        "baseItem": "heavy-crossbow",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 2
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+          "damageType": "piercing",
+          "dice": 1,
+          "die": "d10"
+        },
+        "description": {
+          "value": "<p>This large crossbow is harder to load and more substantial than a regular crossbow, but it packs a greater punch.</p>"
+        },
+        "expend": 1,
+        "grade": null,
+        "group": "crossbow",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 4
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": 120,
+        "reload": {
+          "value": "2"
+        },
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "slug": "heavy-crossbow",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "invested": null
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.giO4LwIKGzJZoaxa"
+      },
+      "effects": [],
+      "sort": 200000,
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.PZAVjc275mdBh4Bm"
+    },
+    {
+      "_id": "mmbGwLCuDSbzImjS",
+      "img": "systems/pf2e/icons/equipment/weapons/bolts.webp",
+      "name": "Bolts",
+      "system": {
+        "baseItem": "bolts",
+        "bulk": {
+          "value": 0.1
+        },
+        "containerId": null,
+        "craftableAs": null,
+        "description": {
+          "value": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "per": 10,
+          "value": {
+            "sp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 10,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "consumable"
+          ]
+        },
+        "uses": {
+          "autoDestroy": true,
+          "max": 1,
+          "value": 1
+        },
+        "slug": "bolts",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "ammo",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.AITVZmakiu3RgfKo"
+      },
+      "effects": [],
+      "sort": 300000,
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.mmbGwLCuDSbzImjS"
+    },
+    {
+      "_id": "b3DdDWTCKpsIWriE",
+      "img": "icons/equipment/chest/vest-leather-tattered-white.webp",
+      "name": "Hide Armor",
+      "system": {
+        "acBonus": 3,
+        "baseItem": "hide-armor",
+        "bulk": {
+          "value": 2
+        },
+        "category": "medium",
+        "checkPenalty": -2,
+        "containerId": null,
+        "description": {
+          "value": "<p>A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.</p>"
+        },
+        "dexCap": 2,
+        "grade": null,
+        "group": "leather",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": -5,
+        "strength": 2,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "hide-armor",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "inSlot": true,
+          "invested": null
+        }
+      },
+      "type": "armor",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.AnwzlOs0njF9Jqnr"
+      },
+      "effects": [],
+      "sort": 400000,
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.b3DdDWTCKpsIWriE"
+    },
+    {
+      "_id": "dMynkjVoW0Ip14cA",
+      "img": "icons/consumables/potions/bottle-conical-fumes-green.webp",
+      "name": "Blurring Draught",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "category": "potion",
+        "containerId": null,
+        "damage": null,
+        "description": {
+          "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p>\n<p>This murky, soot-gray draught leaves a taste of smoke behind. When you drink it, your form ripples like heat haze, and you're @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} for 1 minute.</p>\n<p>@UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.giDxJN60SCsN9Epl]{Effect: Blurring Draught}</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 3
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "per": 1,
+          "value": {
+            "gp": 12
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "consumable",
+            "illusion",
+            "magical",
+            "potion",
+            "visual"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "uses": {
+          "autoDestroy": true,
+          "max": 1,
+          "value": 1
+        },
+        "slug": "blurring-draught",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "consumable",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.IU3Q0WR9TQE8ouEj"
+      },
+      "effects": [],
+      "sort": 500000,
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.dMynkjVoW0Ip14cA"
+    },
+    {
+      "_id": "UDcgJYol0gJgtJZc",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 10,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "sort": 600000,
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.UDcgJYol0gJgtJZc"
+    },
+    {
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Battleaxe",
+      "type": "melee",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 14
+        },
+        "damageRolls": {
+          "x8exi4wqzd0x5h52": {
+            "damage": "2d8+5",
+            "damageType": "slashing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "sweep"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "WbYWFecQIvVm1oSs"
+        }
+      },
+      "_id": "iG2E5VfBAoLeOKGY",
+      "sort": 700000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.iG2E5VfBAoLeOKGY"
+    },
+    {
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Heavy Crossbow",
+      "type": "melee",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 11
+        },
+        "damageRolls": {
+          "aa3dxehufhiwvovv": {
+            "damage": "1d10+4",
+            "damageType": "piercing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "range": {
+          "increment": 120,
+          "max": null
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "reload-2"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "PZAVjc275mdBh4Bm"
+        }
+      },
+      "_id": "3tKgQ6kMwjJ4B7Gq",
+      "sort": 800000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.3tKgQ6kMwjJ4B7Gq"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Through the Breach!",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p>Ghotrag @UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]{Strides} twice, ignoring difficult terrain from rubble and fire. Each goblin ally that can see him can then @UUID[Compendium.pf2e.actionspf2e.Item.UHpkTuCtyaPqiCAB]{Step} as a free action.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "frequency": {
+          "max": 1,
+          "per": "round"
+        }
+      },
+      "type": "action",
+      "_id": "fCm2G71DGBzwQP3x",
+      "sort": 900000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.fCm2G71DGBzwQP3x"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "name": "Rally the Mob",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p>Ghotrag roars at his troops. Until the start of his next turn, goblin allies within 30 feet gain a +1 status bonus to attack and damage rolls (@UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.vwnutpc0RbojEce8]{Effect: Rally the Mob}).</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "auditory",
+            "emotion",
+            "mental"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "frequency": {
+          "max": 1,
+          "per": "round"
+        },
+        "selfEffect": {
+          "name": "Effect: Rally the Mob (Aura)",
+          "uuid": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.oyuZaJhMMQkDYcbe"
+        }
+      },
+      "type": "action",
+      "_id": "CjkrdCivBsnzzJN1",
+      "sort": 1000000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.CjkrdCivBsnzzJN1"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "name": "Blurring Draught",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p><strong>Frequency</strong> once per encounter</p>\n<hr />\n<p>Ghotrag gulps down a murky @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.IU3Q0WR9TQE8ouEj]{blurring draught} and is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} for 1 minute.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "manipulate"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "selfEffect": {
+          "name": "Effect: Blurring Draught",
+          "uuid": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.giDxJN60SCsN9Epl"
+        }
+      },
+      "type": "action",
+      "_id": "WvYc2ARrew3CvVw2",
+      "sort": 1100000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.WvYc2ARrew3CvVw2"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Blood Frenzy",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>While Ghotrag is below half his Hit Points (below 37), he gains a +2 status bonus to damage rolls and takes a -1 penalty to AC.</p>\n<p>@UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.eKuecs3aKAuIo41x]{Effect: Blood Frenzy}</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_id": "AweF7bpYeKXYjbRo",
+      "sort": 1200000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!NC4liiQ0QWHpwM0X.AweF7bpYeKXYjbRo"
+    }
+  ],
+  "name": "Ghotrag",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 5
+      },
+      "dex": {
+        "mod": 2
+      },
+      "con": {
+        "mod": 4
+      },
+      "int": {
+        "mod": 0
+      },
+      "wis": {
+        "mod": 0
+      },
+      "cha": {
+        "mod": 1
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 20
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "",
+        "max": 74,
+        "temp": 0,
+        "value": 74
+      },
+      "speed": {
+        "otherSpeeds": [],
+        "value": 25
+      }
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": [
+          "common",
+          "goblin"
+        ]
+      },
+      "level": {
+        "value": 4
+      },
+      "privateNotes": "<p><strong>Tactics</strong> Ghotrag gets his goblins through the breach, uses Rally the Mob, drinks his blurring draught, and then duels the strongest melee combatant. He never flees.</p>\n<p><strong>Blood Frenzy</strong> When he drops below 37 HP, apply @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.eKuecs3aKAuIo41x]{Effect: Blood Frenzy}.</p>\n<p><strong>Loot</strong> 1 extra @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.IU3Q0WR9TQE8ouEj]{Blurring Draught}, 3d6 gp (10 gp in his inventory).</p>",
+      "publicNotes": "<p>Ghotrag is a huge goblin war-boss and the second prong of the assault on Targos. He leads the rush through the breached northeast wall.</p>",
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Icewind Dale II"
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 10,
+      "senses": [
+        {
+          "type": "darkvision"
+        }
+      ]
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 14
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 9
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 8
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 12
+      },
+      "intimidation": {
+        "base": 11
+      },
+      "survival": {
+        "base": 8
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "med"
+      },
+      "value": [
+        "goblin",
+        "humanoid"
+      ]
+    },
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "npc",
+  "prototypeToken": {
+    "name": "Ghotrag",
+    "actorLink": false,
+    "disposition": -1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/npc-images/ghotrag.Token.webp"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!actors!NC4liiQ0QWHpwM0X"
+}

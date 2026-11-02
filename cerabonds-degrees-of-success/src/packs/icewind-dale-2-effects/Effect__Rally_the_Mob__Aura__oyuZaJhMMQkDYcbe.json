@@ -1,0 +1,73 @@
+{
+  "_id": "oyuZaJhMMQkDYcbe",
+  "img": "icons/skills/melee/hand-grip-axe-strike-orange.webp",
+  "name": "Effect: Rally the Mob (Aura)",
+  "system": {
+    "description": {
+      "value": "<p>Until the start of Ghotrag's next turn, goblin allies within 30 feet of him gain @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.vwnutpc0RbojEce8]{Effect: Rally the Mob}.</p>"
+    },
+    "duration": {
+      "expiry": "turn-start",
+      "sustained": false,
+      "unit": "rounds",
+      "value": 1
+    },
+    "level": {
+      "value": 4
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "rules": [
+      {
+        "effects": [
+          {
+            "affects": "allies",
+            "events": [
+              "enter"
+            ],
+            "includesSelf": false,
+            "predicate": [
+              "target:trait:goblin"
+            ],
+            "uuid": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.vwnutpc0RbojEce8"
+          }
+        ],
+        "key": "Aura",
+        "radius": 30,
+        "slug": "rally-the-mob",
+        "traits": [
+          "auditory",
+          "emotion",
+          "mental"
+        ]
+      }
+    ],
+    "start": {
+      "initiative": null,
+      "value": 0
+    },
+    "tokenIcon": {
+      "show": true
+    },
+    "traits": {
+      "rarity": "common",
+      "value": []
+    },
+    "slug": "effect-rally-the-mob-aura",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "effect",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!oyuZaJhMMQkDYcbe"
+}

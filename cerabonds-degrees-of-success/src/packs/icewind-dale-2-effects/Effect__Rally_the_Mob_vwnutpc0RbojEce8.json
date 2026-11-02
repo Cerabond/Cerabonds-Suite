@@ -1,0 +1,59 @@
+{
+  "_id": "vwnutpc0RbojEce8",
+  "img": "icons/skills/melee/hand-grip-axe-strike-orange.webp",
+  "name": "Effect: Rally the Mob",
+  "system": {
+    "description": {
+      "value": "<p>Ghotrag's bellowing spurs you on. You gain a +1 status bonus to attack and damage rolls.</p>"
+    },
+    "duration": {
+      "expiry": "turn-start",
+      "sustained": false,
+      "unit": "rounds",
+      "value": 1
+    },
+    "level": {
+      "value": 4
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": [
+          "attack-roll",
+          "damage"
+        ],
+        "type": "status",
+        "value": 1
+      }
+    ],
+    "start": {
+      "initiative": null,
+      "value": 0
+    },
+    "tokenIcon": {
+      "show": true
+    },
+    "traits": {
+      "rarity": "common",
+      "value": []
+    },
+    "slug": "effect-rally-the-mob",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "effect",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!vwnutpc0RbojEce8"
+}

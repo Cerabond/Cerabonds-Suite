@@ -1,0 +1,71 @@
+{
+  "_id": "unmDFw02i27ySL4F",
+  "img": "icons/commodities/claws/claw-canine-brown-grey.webp",
+  "name": "Effect: Worg Claws",
+  "system": {
+    "description": {
+      "value": "<p>Your hands have twisted into a worg's claws. You gain a claw unarmed attack that deals 1d6 slashing damage and has the agile, finesse, and unarmed traits.</p>"
+    },
+    "duration": {
+      "expiry": "turn-start",
+      "sustained": false,
+      "unit": "minutes",
+      "value": 1
+    },
+    "level": {
+      "value": 4
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "rules": [
+      {
+        "baseType": "claw",
+        "category": "unarmed",
+        "damage": {
+          "base": {
+            "damageType": "slashing",
+            "dice": 1,
+            "die": "d6"
+          }
+        },
+        "img": "icons/commodities/claws/claw-canine-brown-grey.webp",
+        "key": "Strike",
+        "label": "Worg Claw",
+        "range": null,
+        "traits": [
+          "agile",
+          "finesse",
+          "magical",
+          "unarmed"
+        ]
+      }
+    ],
+    "start": {
+      "initiative": null,
+      "value": 0
+    },
+    "tokenIcon": {
+      "show": true
+    },
+    "traits": {
+      "rarity": "common",
+      "value": []
+    },
+    "slug": "effect-worg-claws",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "effect",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!unmDFw02i27ySL4F"
+}

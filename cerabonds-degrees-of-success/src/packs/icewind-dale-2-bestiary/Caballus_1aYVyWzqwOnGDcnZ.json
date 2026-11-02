@@ -1,0 +1,1596 @@
+{
+  "_id": "1aYVyWzqwOnGDcnZ",
+  "img": "tokenizer/npc-images/caballus.Avatar.webp",
+  "items": [
+    {
+      "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+      "name": "Arcane Spontaneous Spells",
+      "type": "spellcastingEntry",
+      "system": {
+        "autoHeightenLevel": {
+          "value": null
+        },
+        "description": {
+          "value": ""
+        },
+        "prepared": {
+          "flexible": false,
+          "value": "spontaneous"
+        },
+        "proficiency": {
+          "value": 0
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slots": {
+          "slot1": {
+            "max": 3,
+            "value": 3
+          },
+          "slot2": {
+            "max": 3,
+            "value": 3
+          },
+          "slot3": {
+            "max": 2,
+            "value": 2
+          }
+        },
+        "slug": null,
+        "spelldc": {
+          "dc": 22,
+          "mod": 0,
+          "value": 14
+        },
+        "tradition": {
+          "value": "arcane"
+        },
+        "traits": {},
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "_id": "P69989Zr7rlX6SHz",
+      "sort": 100000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.P69989Zr7rlX6SHz"
+    },
+    {
+      "_id": "1UzMCM4ywHtgWynI",
+      "folder": "4fJHnYFqH0VjZXPv",
+      "img": "icons/magic/fire/projectile-fireball-orange-yellow.webp",
+      "name": "Fireball",
+      "system": {
+        "area": {
+          "type": "burst",
+          "value": 20
+        },
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "6d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "description": {
+          "value": "<p>A roaring blast of fire detonates at a spot you designate, dealing 6d6 fire damage.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 2d6.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "heightening": {
+          "area": 0,
+          "damage": {
+            "0": "2d6"
+          },
+          "interval": 1,
+          "type": "interval"
+        },
+        "level": {
+          "value": 3
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "500 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": ""
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ],
+          "value": [
+            "concentrate",
+            "fire",
+            "manipulate"
+          ]
+        },
+        "slug": "fireball",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 3,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd"
+      },
+      "effects": [],
+      "sort": 200000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.1UzMCM4ywHtgWynI"
+    },
+    {
+      "_id": "bBhEgb2p2aAeG2Hu",
+      "folder": "4fJHnYFqH0VjZXPv",
+      "img": "icons/magic/time/hourglass-tilted-gray.webp",
+      "name": "Slow",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": {
+          "save": {
+            "basic": false,
+            "statistic": "fortitude"
+          }
+        },
+        "description": {
+          "value": "<p>You dilate the flow of time around the target, slowing its actions.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute.</p>\n<p><strong>Critical Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} for 1 minute.</p>\n<hr />\n<p><strong>Heightened (6th)</strong> You can target up to 10 creatures.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": "1 minute"
+        },
+        "heightening": {
+          "levels": {
+            "6": {
+              "target": {
+                "value": "10 creatures"
+              }
+            }
+          },
+          "type": "fixed"
+        },
+        "level": {
+          "value": 3
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": "1 creature"
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult",
+            "primal"
+          ],
+          "value": [
+            "concentrate",
+            "manipulate"
+          ]
+        },
+        "slug": "slow",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 3,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.WsUwpfmhKrKwoIe3"
+      },
+      "effects": [],
+      "sort": 300000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.bBhEgb2p2aAeG2Hu"
+    },
+    {
+      "_id": "hT7QTstVOkS1AriJ",
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "icons/magic/fire/projectile-fireball-smoke-orange.webp",
+      "name": "Blazing Bolt",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": null,
+        "description": {
+          "value": "<p>You fire a ray of heat and flame. Make a spell attack roll against a single creature. On a hit, the target takes 2d6 fire damage, and on a critical hit, the target takes double damage.</p>\n<p>For each additional action you use when Casting the Spell, you can fire an additional ray at a different target, to a maximum of three rays targeting three different targets for 3 actions. These attacks each increase your multiple attack penalty, but you don't increase your multiple attack penalty until after you make all the spell attack rolls for <em>blazing bolt</em>. If you spend 2 or more actions Casting the Spell, the damage increases to 4d6 fire damage on a hit, and it still deals double damage on a critical hit.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage to each target increases by 1d6 for the 1-action version, or by 2d6 for the 2-action and 3-action versions.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "level": {
+          "value": 2
+        },
+        "overlays": {
+          "hqiwae0wgehycnex": {
+            "_id": "hqiwae0wgehycnex",
+            "overlayType": "override",
+            "sort": 2,
+            "system": {
+              "damage": {
+                "d80radfbikwjogmr": {
+                  "applyMod": false,
+                  "category": null,
+                  "formula": "4d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "heightening": {
+                "damage": {
+                  "d80radfbikwjogmr": "2d6"
+                },
+                "interval": 1,
+                "type": "interval"
+              },
+              "target": {
+                "value": "2 or more creatures"
+              },
+              "time": {
+                "value": "2 or 3"
+              }
+            }
+          },
+          "wlrbtv7c5shfmdh1": {
+            "_id": "wlrbtv7c5shfmdh1",
+            "overlayType": "override",
+            "sort": 1,
+            "system": {
+              "damage": {
+                "tgzp2lzatpg4c9a5": {
+                  "applyMod": false,
+                  "category": null,
+                  "formula": "2d6",
+                  "materials": [],
+                  "type": "fire"
+                }
+              },
+              "heightening": {
+                "damage": {
+                  "tgzp2lzatpg4c9a5": "1d6"
+                },
+                "interval": 1,
+                "type": "interval"
+              },
+              "target": {
+                "value": "1 creature"
+              },
+              "time": {
+                "value": "1"
+              }
+            }
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "60 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": "1 or more creatures"
+        },
+        "time": {
+          "value": "1 to 3"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ],
+          "value": [
+            "attack",
+            "concentrate",
+            "fire",
+            "manipulate"
+          ]
+        },
+        "slug": "blazing-bolt",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 2,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.ZxHC7V7HtjUsB8zH"
+      },
+      "effects": [],
+      "sort": 400000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.hT7QTstVOkS1AriJ"
+    },
+    {
+      "_id": "0KiUdtT61bqqDYLc",
+      "folder": "lPzcDrjGDFbzuF2r",
+      "img": "systems/pf2e/icons/spells/blur.webp",
+      "name": "Blur",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": null,
+        "description": {
+          "value": "<p>The target's form appears blurry. It becomes @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}. As the nature of this effect still leaves the target's location obvious, the target can't use this concealment to Hide or Sneak.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": "1 minute"
+        },
+        "level": {
+          "value": 2
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "touch"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": "1 creature"
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ],
+          "value": [
+            "concentrate",
+            "illusion",
+            "manipulate",
+            "visual"
+          ]
+        },
+        "slug": "blur",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 2,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.3JG1t3T4mWn6vTke"
+      },
+      "effects": [],
+      "sort": 500000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.0KiUdtT61bqqDYLc"
+    },
+    {
+      "_id": "neNasU1zh3HivXG6",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/dragon-breath.webp",
+      "name": "Breathe Fire",
+      "system": {
+        "area": {
+          "type": "cone",
+          "value": 15
+        },
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d6",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "description": {
+          "value": "<p>A gout of flame sprays from your mouth. You deal 2d6 fire damage to creatures in the area with a basic Reflex save.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 2d6.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "heightening": {
+          "damage": {
+            "0": "2d6"
+          },
+          "interval": 1,
+          "type": "interval"
+        },
+        "level": {
+          "value": 1
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": ""
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": ""
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ],
+          "value": [
+            "concentrate",
+            "fire",
+            "manipulate"
+          ]
+        },
+        "slug": "breathe-fire",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 1,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.y6rAdMK6EFlV6U0t"
+      },
+      "effects": [],
+      "sort": 600000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.neNasU1zh3HivXG6"
+    },
+    {
+      "_id": "BdtYFQW0LVAjeMFJ",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/magic-missile.webp",
+      "name": "Force Barrage",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "1d4+1",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "force"
+          }
+        },
+        "defense": null,
+        "description": {
+          "value": "<p>You fire a shard of solidified magic toward a creature that you can see. It automatically hits and deals 1d4+1 force damage. For each additional action you use when Casting the Spell, increase the number of shards you shoot by one, to a maximum of three shards for 3 actions. You choose the target for each shard individually. If you shoot more than one shard at the same target, combine the damage before applying bonuses or penalties to damage, resistances, weaknesses, and so forth.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> You fire one additional shard with each action you spend.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "overlays": {},
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "120 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": "1 creature"
+        },
+        "time": {
+          "value": "1 to 3"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "occult"
+          ],
+          "value": [
+            "concentrate",
+            "force",
+            "manipulate"
+          ]
+        },
+        "slug": "force-barrage",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 1,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.gKKqvLohtrSJj3BM"
+      },
+      "effects": [],
+      "sort": 700000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.BdtYFQW0LVAjeMFJ"
+    },
+    {
+      "_id": "7iQXX66jqnDl3JIY",
+      "folder": "T8AzYUgNIAgTJ9Iz",
+      "img": "systems/pf2e/icons/spells/mage-armor.webp",
+      "name": "Mystic Armor",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": null,
+        "description": {
+          "value": "<p>You ward yourself with shimmering magical energy, gaining a +1 item bonus to AC and a maximum Dexterity modifier of +5. While wearing <em>mystic armor</em>, you use your unarmored proficiency to calculate your AC.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.qkwb5DD3zmKwvbk0]{Spell Effect: Mystic Armor}</p>\n<hr />\n<p><strong>Heightened (4th)</strong> You gain a +1 item bonus to saving throws.</p>\n<p><strong>Heightened (6th)</strong> The item bonus to AC increases to +2, and you gain a +1 item bonus to saving throws.</p>\n<p><strong>Heightened (8th)</strong> The item bonus to AC increases to +2, and you gain a +2 item bonus to saving throws.</p>\n<p><strong>Heightened (10th)</strong> The item bonus to AC increases to +3, and you gain a +3 item bonus to saving throws.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": "until your next daily preparations"
+        },
+        "level": {
+          "value": 1
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": ""
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": ""
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ],
+          "value": [
+            "concentrate",
+            "manipulate"
+          ]
+        },
+        "slug": "mystic-armor",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "heightenedLevel": 1,
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.aAbfKn8maGjJjk2W"
+      },
+      "effects": [],
+      "sort": 800000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.7iQXX66jqnDl3JIY"
+    },
+    {
+      "_id": "lw3C3Xw9AH9uV52J",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/detect-magic.webp",
+      "name": "Detect Magic",
+      "system": {
+        "area": {
+          "type": "emanation",
+          "value": 30
+        },
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": null,
+        "description": {
+          "value": "<p>You send out a pulse that registers the presence of magic. You receive no information beyond the presence or absence of magic. You can choose to ignore magic you're fully aware of, such as the magic items and ongoing spells of you and your allies. You detect illusion magic only if that magic's effect has a lower rank than the rank of your <em>detect magic</em> spell. However, items that have an illusion aura but aren't deceptive in appearance (such as an <em>invisibility potion</em>) typically are detected normally.</p><hr /><p><strong>Heightened (3rd)</strong> You learn the rank or level of the most powerful magical effect the spell detects, as determined by the GM.</p>\n<p><strong>Heightened (4th)</strong> As 3rd rank, but you also pinpoint the source of the highest-rank magic. Like for an imprecise sense, you don't learn the exact location, but can narrow down the source to within a 5-foot cube (or the nearest if larger than that).</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "level": {
+          "value": 1
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": ""
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": ""
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult",
+            "primal"
+          ],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "detection",
+            "manipulate"
+          ]
+        },
+        "slug": "detect-magic",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl"
+      },
+      "effects": [],
+      "sort": 900000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.lw3C3Xw9AH9uV52J"
+    },
+    {
+      "_id": "8jRT2nKZDc6Uezbl",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/lightning/bolt-strike-forked-blue.webp",
+      "name": "Electric Arc",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+          "0": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "electricity"
+          }
+        },
+        "defense": {
+          "save": {
+            "basic": true,
+            "statistic": "reflex"
+          }
+        },
+        "description": {
+          "value": "<p>An arc of lightning leaps from one target to another. Each target takes 2d4 electricity damage with a basic Reflex save.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 1d4.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "heightening": {
+          "damage": {
+            "0": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        },
+        "level": {
+          "value": 1
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": "1 or 2 creatures"
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "electricity",
+            "manipulate"
+          ]
+        },
+        "slug": "electric-arc",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.kBhaPuzLUSwS6vVf"
+      },
+      "effects": [],
+      "sort": 1000000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.8jRT2nKZDc6Uezbl"
+    },
+    {
+      "_id": "eQ0eAjOMlO6NtIiI",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "icons/magic/fire/explosion-embers-evade-silhouette.webp",
+      "name": "Ignition",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+          "cQDyW0QpjJ38MlSi": {
+            "applyMod": false,
+            "category": null,
+            "formula": "2d4",
+            "kinds": [
+              "damage"
+            ],
+            "materials": [],
+            "type": "fire"
+          }
+        },
+        "defense": null,
+        "description": {
+          "value": "<p>You snap your fingers and point at a target, which begins to smolder. Make a spell attack roll against the target's AC, dealing 2d4 fire damage on a hit. If the target is within your melee reach, you can choose to make a melee spell attack with the flame instead of a ranged spell attack, which increases all the spell's damage dice to d6s.</p><hr /><p><strong>Critical Success</strong> The target takes double damage and 1d4 persistent fire damage.</p>\n<p><strong>Success</strong> The target takes full damage.</p><hr /><p><strong>Heightened (+1)</strong> The initial damage increases by 1d4 and the persistent fire damage on a critical hit increases by 1d4.</p>\n<p>@Damage[(@item.rank)d4[persistent,fire]]{Scaling Persistent Fire Damage}</p>\n<p>@Damage[(@item.rank)d6[persistent,fire]]{Scaling Persistent Fire Damage (Melee)}</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": ""
+        },
+        "heightening": {
+          "damage": {
+            "cQDyW0QpjJ38MlSi": "1d4"
+          },
+          "interval": 1,
+          "type": "interval"
+        },
+        "level": {
+          "value": 1
+        },
+        "overlays": {
+          "eOCNn2ohYAvsYZjn": {
+            "_id": "eOCNn2ohYAvsYZjn",
+            "overlayType": "override",
+            "sort": 1,
+            "system": {}
+          },
+          "xYyA7CV1GaFTRjBQ": {
+            "_id": "xYyA7CV1GaFTRjBQ",
+            "name": "Ignition (Melee)",
+            "overlayType": "override",
+            "sort": 2,
+            "system": {
+              "damage": {
+                "cQDyW0QpjJ38MlSi": {
+                  "formula": "2d6"
+                }
+              },
+              "heightening": {
+                "damage": {
+                  "cQDyW0QpjJ38MlSi": "1d6"
+                }
+              },
+              "range": {
+                "value": "touch"
+              }
+            }
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": "30 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": "1 creature"
+        },
+        "time": {
+          "value": "2"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "primal"
+          ],
+          "value": [
+            "attack",
+            "cantrip",
+            "concentrate",
+            "fire",
+            "manipulate"
+          ]
+        },
+        "slug": "ignition",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.6DfLZBl8wKIV03Iq"
+      },
+      "effects": [],
+      "sort": 1100000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.eQ0eAjOMlO6NtIiI"
+    },
+    {
+      "_id": "U9bWlf5x3LxQY3A8",
+      "folder": "D7UVaOiB40wTR6kv",
+      "img": "systems/pf2e/icons/spells/shield.webp",
+      "name": "Shield",
+      "system": {
+        "area": null,
+        "cost": {
+          "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": null,
+        "description": {
+          "value": "<p>You raise a magical shield of force. This counts as using the Raise a Shield action, giving you a +1 circumstance bonus to AC until the start of your next turn, but it doesn't require a hand to use.</p>\n<p>While the spell is in effect, you can use the @UUID[Compendium.pf2e.feats-srd.Item.jM72TjJ965jocBV8]{Shield Block} reaction with your magic shield. The shield has Hardness 5. You can use the spell's reaction to reduce damage from any spell or magical effect, even if it doesn't deal physical damage. After you use Shield Block, the spell ends and you can't cast it again for 10 minutes.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Jemq5UknGdMO7b73]{Spell Effect: Shield}</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.QF6RDlCoTvkVHRo4]{Effect: Shield Immunity}</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The shield's Hardness increases by 5.</p>"
+        },
+        "duration": {
+          "sustained": false,
+          "value": "until the start of your next turn"
+        },
+        "level": {
+          "value": 1
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "range": {
+          "value": ""
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+          "value": ""
+        },
+        "time": {
+          "value": "1"
+        },
+        "traits": {
+          "rarity": "common",
+          "traditions": [
+            "arcane",
+            "divine",
+            "occult"
+          ],
+          "value": [
+            "cantrip",
+            "concentrate",
+            "force"
+          ]
+        },
+        "slug": "shield",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "location": {
+          "value": "P69989Zr7rlX6SHz"
+        }
+      },
+      "type": "spell",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.spells-srd.Item.TVKNbcgTee19PXZR"
+      },
+      "effects": [],
+      "sort": 1200000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.U9bWlf5x3LxQY3A8"
+    },
+    {
+      "_id": "ljvSFobHuF8URAOC",
+      "img": "icons/weapons/staves/staff-engraved-wood.webp",
+      "name": "Whispering Staff",
+      "system": {
+        "ammo": null,
+        "baseItem": "staff",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+          "damageType": "bludgeoning",
+          "dice": 1,
+          "die": "d4"
+        },
+        "description": {
+          "value": "<p>This ironwood staff was once held by the goblin sorcerer Caballus, and it still bears the stink of his touch. Trails of runes encircle the staff like snakes, and aside from a single minor rune of accuracy and another of wounding, the rest appear to be nonsense syllables and bunk. The staff is surprisingly light and well-balanced for its size, and it can be held easily in one hand. It vanishes momentarily when swung, most likely through some sort of minor illusionary magic.</p>\n<hr />\n<p>This <em>+1 staff</em> makes barely a whisper as it moves. While wielding it, you gain a +1 item bonus to Stealth checks.</p>\n<p><strong>Activate—Vanishing Swing</strong> <span class=\"action-glyph\">f</span> (illusion, visual)</p>\n<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You make a melee Strike with the staff against a creature that can see you.</p>\n<p><strong>Effect</strong> The staff winks out of sight as you swing it. The target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against the triggering Strike.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "club",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 3
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 60
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [
+          {
+            "key": "FlatModifier",
+            "selector": "stealth",
+            "type": "item",
+            "value": 1
+          }
+        ],
+        "runes": {
+          "potency": 1,
+          "property": [],
+          "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "unique",
+          "value": [
+            "magical",
+            "monk",
+            "two-hand-d8"
+          ]
+        },
+        "usage": {
+          "value": "held-in-one-hand"
+        },
+        "slug": "whispering-staff",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "invested": null
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.4xl7YMJALjkDTpdW"
+      },
+      "effects": [],
+      "sort": 1300000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.ljvSFobHuF8URAOC"
+    },
+    {
+      "_id": "u3XrkyxPd7msNtVr",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 14,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "sort": 1400000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.u3XrkyxPd7msNtVr"
+    },
+    {
+      "_id": "VUJnOvntIKwJATn5",
+      "img": "icons/commodities/bones/bone-fragments-grey.webp",
+      "name": "Pouch of Goblin Teeth",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0
+        },
+        "category": null,
+        "containerId": null,
+        "description": {
+          "value": "<p>A grimy leather pouch full of goblin teeth. It's worth nothing to anyone but a goblin.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {}
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "pouch-of-goblin-teeth",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "sort": 1500000,
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.VUJnOvntIKwJATn5"
+    },
+    {
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Staff",
+      "type": "melee",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 9
+        },
+        "damageRolls": {
+          "xmflmmqegyvx2dyy": {
+            "damage": "1d4+2",
+            "damageType": "bludgeoning"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "two-hand-d8"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "_id": "55DJVzEuLegW9NS4",
+      "sort": 1600000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.55DJVzEuLegW9NS4"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/Reaction.webp",
+      "name": "Meat Shield",
+      "system": {
+        "actionType": {
+          "value": "reaction"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p><strong>Trigger</strong> A creature targets Caballus with a Strike while a goblin ally is adjacent to him.</p>\n<hr />\n<p><strong>Effect</strong> Caballus yanks the goblin into the way, and it becomes the target instead. The attacker uses the same attack roll against the goblin's AC.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_id": "2k5aOEA4o9mfO7on",
+      "sort": 1700000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.2k5aOEA4o9mfO7on"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Burn It All!",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>Caballus never bothers to keep his goblin allies out of his area spells. He cheerfully burns his own troops.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_id": "3mwxCQ9qCKgOFxP7",
+      "sort": 1800000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!1aYVyWzqwOnGDcnZ.3mwxCQ9qCKgOFxP7"
+    }
+  ],
+  "name": "Caballus",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": -1
+      },
+      "dex": {
+        "mod": 3
+      },
+      "con": {
+        "mod": 2
+      },
+      "int": {
+        "mod": 1
+      },
+      "wis": {
+        "mod": 1
+      },
+      "cha": {
+        "mod": 5
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 20
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "",
+        "max": 56,
+        "temp": 0,
+        "value": 56
+      },
+      "speed": {
+        "otherSpeeds": [],
+        "value": 25
+      },
+      "resistances": [
+        {
+          "doubleVs": [],
+          "exceptions": [],
+          "type": "fire",
+          "value": 5
+        }
+      ]
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": [
+          "common",
+          "draconic",
+          "goblin"
+        ]
+      },
+      "level": {
+        "value": 5
+      },
+      "privateNotes": "<p><strong>Tactics</strong> Caballus casts <em>mystic armor</em> before the fight (one rank 1 slot; apply @UUID[Compendium.pf2e.spell-effects.Item.qkwb5DD3zmKwvbk0]{Spell Effect: Mystic Armor}, which raises his AC to 21). He opens with <em>fireball</em>, then casts <em>slow</em> on the closest melee threat. He uses <em>blazing bolt</em> on casters and <em>blur</em> when engaged, and he stays behind his goblin screen to keep Meat Shield available.</p>\n<p><strong>Loot</strong> @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.4xl7YMJALjkDTpdW]{Whispering Staff}, 4d6 gp (14 gp in his inventory), a pouch of goblin teeth.</p>",
+      "publicNotes": "<p>Caballus is the goblin sorcerer whose name the goblins chant, and the third prong of the assault on Targos. He is cruel and theatrical, and he cheerfully burns his own troops. A pyre ward of goblin sorcery shields him, granting him resistance 5 to fire.</p>",
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Icewind Dale II"
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 12,
+      "senses": [
+        {
+          "type": "darkvision"
+        }
+      ]
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 10
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 12
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 13
+      }
+    },
+    "skills": {
+      "arcana": {
+        "base": 12
+      },
+      "deception": {
+        "base": 13
+      },
+      "intimidation": {
+        "base": 13
+      },
+      "occultism": {
+        "base": 10
+      },
+      "stealth": {
+        "base": 11
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "sm"
+      },
+      "value": [
+        "goblin",
+        "humanoid"
+      ]
+    },
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "npc",
+  "prototypeToken": {
+    "name": "Caballus",
+    "actorLink": false,
+    "disposition": -1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/npc-images/caballus.Token.webp"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!actors!1aYVyWzqwOnGDcnZ"
+}

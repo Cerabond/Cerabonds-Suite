@@ -1,0 +1,102 @@
+{
+  "_id": "4xl7YMJALjkDTpdW",
+  "img": "icons/weapons/staves/staff-engraved-wood.webp",
+  "name": "Whispering Staff",
+  "system": {
+    "ammo": null,
+    "baseItem": "staff",
+    "bonus": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bulk": {
+      "value": 1
+    },
+    "category": "simple",
+    "containerId": null,
+    "damage": {
+      "damageType": "bludgeoning",
+      "dice": 1,
+      "die": "d4"
+    },
+    "description": {
+      "value": "<p>This ironwood staff was once held by the goblin sorcerer Caballus, and it still bears the stink of his touch. Trails of runes encircle the staff like snakes, and aside from a single minor rune of accuracy and another of wounding, the rest appear to be nonsense syllables and bunk. The staff is surprisingly light and well-balanced for its size, and it can be held easily in one hand. It vanishes momentarily when swung, most likely through some sort of minor illusionary magic.</p>\n<hr />\n<p>This <em>+1 staff</em> makes barely a whisper as it moves. While wielding it, you gain a +1 item bonus to Stealth checks.</p>\n<p><strong>Activate—Vanishing Swing</strong> <span class=\"action-glyph\">f</span> (illusion, visual)</p>\n<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You make a melee Strike with the staff against a creature that can see you.</p>\n<p><strong>Effect</strong> The staff winks out of sight as you swing it. The target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against the triggering Strike.</p>"
+    },
+    "expend": null,
+    "grade": null,
+    "group": "club",
+    "hardness": 0,
+    "hp": {
+      "max": 0,
+      "value": 0
+    },
+    "level": {
+      "value": 3
+    },
+    "material": {
+      "grade": null,
+      "type": null
+    },
+    "price": {
+      "value": {
+        "gp": 60
+      }
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "quantity": 1,
+    "range": null,
+    "reload": {
+      "value": null
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "stealth",
+        "type": "item",
+        "value": 1
+      }
+    ],
+    "runes": {
+      "potency": 1,
+      "property": [],
+      "striking": 0
+    },
+    "size": "med",
+    "splashDamage": {
+      "value": 0
+    },
+    "traits": {
+      "rarity": "unique",
+      "value": [
+        "magical",
+        "monk",
+        "two-hand-d8"
+      ]
+    },
+    "usage": {
+      "value": "held-in-one-hand"
+    },
+    "slug": "whispering-staff",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    },
+    "equipped": {
+      "carryType": "worn"
+    }
+  },
+  "type": "weapon",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!4xl7YMJALjkDTpdW"
+}

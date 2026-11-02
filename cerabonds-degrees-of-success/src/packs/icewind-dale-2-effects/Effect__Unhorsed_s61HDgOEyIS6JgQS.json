@@ -1,0 +1,60 @@
+{
+  "_id": "s61HDgOEyIS6JgQS",
+  "img": "icons/creatures/mammals/wolf-shadow-black.webp",
+  "name": "Effect: Unhorsed",
+  "system": {
+    "description": {
+      "value": "<p>Vghotan's warg has bucked him off and fled. He's Small, his Speed is 25 feet, and he can no longer use his warg jaws Strike or Mounted Charge. He keeps his longspear.</p>"
+    },
+    "duration": {
+      "expiry": "turn-start",
+      "sustained": false,
+      "unit": "unlimited",
+      "value": -1
+    },
+    "level": {
+      "value": 3
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "rules": [
+      {
+        "key": "CreatureSize",
+        "value": "small"
+      },
+      {
+        "key": "FlatModifier",
+        "label": "Unhorsed",
+        "selector": "land-speed",
+        "value": -15
+      }
+    ],
+    "start": {
+      "initiative": null,
+      "value": 0
+    },
+    "tokenIcon": {
+      "show": true
+    },
+    "traits": {
+      "rarity": "common",
+      "value": []
+    },
+    "slug": "effect-unhorsed",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "effect",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!s61HDgOEyIS6JgQS"
+}

@@ -1,0 +1,55 @@
+{
+  "_id": "giDxJN60SCsN9Epl",
+  "img": "icons/consumables/potions/bottle-conical-fumes-green.webp",
+  "name": "Effect: Blurring Draught",
+  "system": {
+    "description": {
+      "value": "<p>Your form ripples like heat haze. You're @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}.</p>"
+    },
+    "duration": {
+      "expiry": "turn-start",
+      "sustained": false,
+      "unit": "minutes",
+      "value": 1
+    },
+    "level": {
+      "value": 3
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "rules": [
+      {
+        "inMemoryOnly": true,
+        "key": "GrantItem",
+        "uuid": "Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W"
+      }
+    ],
+    "start": {
+      "initiative": null,
+      "value": 0
+    },
+    "tokenIcon": {
+      "show": true
+    },
+    "traits": {
+      "rarity": "common",
+      "value": []
+    },
+    "slug": "effect-blurring-draught",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "effect",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!giDxJN60SCsN9Epl"
+}

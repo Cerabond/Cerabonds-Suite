@@ -2,8 +2,8 @@
   "id": "cerabonds-degrees-of-success",
   "name": "cerabonds-degrees-of-success",
   "title": "Cerabond's Suite Improved",
-  "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now, plus a compendium of Icewind Dale 2 items.",
-  "version": "1.1.0",
+  "description": "Tints tokens based on the degree of success when rolling a saving throw. Additionally, it includes Cerabond's other modules now, plus compendiums of Icewind Dale 2 items, creatures and effects.",
+  "version": "1.2.0",
   "authors": [
     {
       "name": "Cerabond"
@@ -27,6 +27,29 @@
       "ownership": {
         "PLAYER": "NONE",
         "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "icewind-dale-2-bestiary",
+      "label": "Icewind Dale 2 Bestiary",
+      "path": "packs/icewind-dale-2-bestiary",
+      "type": "Actor",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "icewind-dale-2-effects",
+      "label": "Icewind Dale 2 Effects",
+      "path": "packs/icewind-dale-2-effects",
+      "type": "Item",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
     }

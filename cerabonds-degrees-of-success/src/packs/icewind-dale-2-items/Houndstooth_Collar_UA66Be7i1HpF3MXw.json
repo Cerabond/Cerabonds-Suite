@@ -1,0 +1,77 @@
+{
+  "_id": "UA66Be7i1HpF3MXw",
+  "img": "icons/equipment/neck/collar-carved-bone-teeth.webp",
+  "name": "Houndstooth Collar",
+  "system": {
+    "baseItem": null,
+    "bulk": {
+      "value": 0.1
+    },
+    "containerId": null,
+    "description": {
+      "value": "<p>This filthy enchanted collar was stripped from the neck of Vghotan's dead worg and bears the crude marks of goblin sorcery. When worn around the neck, the wearer gains the ability to call upon the strength and ferocity of a worg, turning his hands into claws and raking opponents for tremendous damage.</p>\n<hr />\n<p>The collar fills you with a worg's fearlessness. When you roll a success on a Will save against a fear effect, you get a critical success instead. In addition, anytime you gain the @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} condition, reduce its value by 1.</p>\n<p><strong>Activate—Worg's Ferocity</strong> <span class=\"action-glyph\">1</span> (concentrate, morph)</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Effect</strong> Your hands twist into a worg's claws for 1 minute. You gain a claw unarmed attack that deals 1d6 slashing damage and has the agile, finesse, and unarmed traits.</p>\n<p>@UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.unmDFw02i27ySL4F]{Effect: Worg Claws}</p>\n<hr />\n<p>Lord Ulbrec Dinnesmore of Targos pays a bounty for this collar as proof that Vghotan is dead.</p>"
+    },
+    "hardness": 0,
+    "hp": {
+      "max": 0,
+      "value": 0
+    },
+    "level": {
+      "value": 4
+    },
+    "material": {
+      "grade": null,
+      "type": null
+    },
+    "price": {
+      "value": {
+        "gp": 90
+      }
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "quantity": 1,
+    "rules": [
+      {
+        "adjustment": {
+          "success": "one-degree-better"
+        },
+        "key": "AdjustDegreeOfSuccess",
+        "predicate": [
+          "item:trait:fear"
+        ],
+        "selector": "will"
+      }
+    ],
+    "size": "med",
+    "traits": {
+      "rarity": "unique",
+      "value": [
+        "invested",
+        "magical"
+      ]
+    },
+    "usage": {
+      "value": "worncollar"
+    },
+    "slug": "houndstooth-collar",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    },
+    "equipped": {
+      "carryType": "worn"
+    }
+  },
+  "type": "equipment",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!UA66Be7i1HpF3MXw"
+}

@@ -1,0 +1,983 @@
+{
+  "_id": "gGfaBcP9RcGPjznM",
+  "img": "tokenizer/npc-images/vghotan.Avatar.webp",
+  "items": [
+    {
+      "_id": "3F3vYX7C9PKjloQc",
+      "img": "icons/weapons/polearms/spear-simple-engraved.webp",
+      "name": "Longspear",
+      "system": {
+        "ammo": null,
+        "baseItem": "longspear",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 2
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+          "damageType": "piercing",
+          "dice": 1,
+          "die": "d8"
+        },
+        "description": {
+          "value": "<p>This very long spear, sometimes called a pike, is purely for thrusting rather than throwing. Used by many soldiers and city watch for crowd control and defense against charging enemies, it must be wielded with two hands.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "spear",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "sp": 5
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+          "value": null
+        },
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "reach"
+          ]
+        },
+        "usage": {
+          "value": "held-in-two-hands"
+        },
+        "slug": "longspear",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "held",
+          "handsHeld": 2,
+          "invested": null
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.aXuJh4i8HqSu6NYV"
+      },
+      "effects": [],
+      "sort": 100000,
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.3F3vYX7C9PKjloQc"
+    },
+    {
+      "_id": "NUVlYHPBfHxFP25t",
+      "img": "systems/pf2e/icons/equipment/weapons/javelin.webp",
+      "name": "Javelin",
+      "system": {
+        "ammo": null,
+        "baseItem": "javelin",
+        "bonus": {
+          "value": 0
+        },
+        "bonusDamage": {
+          "value": 0
+        },
+        "bulk": {
+          "value": 0.1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+          "damageType": "piercing",
+          "dice": 1,
+          "die": "d6"
+        },
+        "description": {
+          "value": "<p>This thin spear is well balanced for throwing but is not designed for melee use.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "dart",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "sp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 4,
+        "range": 30,
+        "reload": {
+          "value": "-"
+        },
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+          "value": 0
+        },
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "thrown"
+          ]
+        },
+        "usage": {
+          "canBeAmmo": false,
+          "value": "held-in-one-hand"
+        },
+        "slug": "javelin",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "invested": null
+        }
+      },
+      "type": "weapon",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.JNt7GmLCCVz5BiEI"
+      },
+      "effects": [],
+      "sort": 200000,
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.NUVlYHPBfHxFP25t"
+    },
+    {
+      "_id": "WdJZE7ZqOucajLSB",
+      "img": "icons/equipment/chest/breastplate-banded-simple-leather-brown.webp",
+      "name": "Leather Armor",
+      "system": {
+        "acBonus": 1,
+        "baseItem": "leather-armor",
+        "bulk": {
+          "value": 1
+        },
+        "category": "light",
+        "checkPenalty": -1,
+        "containerId": null,
+        "description": {
+          "value": "<p>A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.</p>"
+        },
+        "dexCap": 4,
+        "grade": null,
+        "group": "leather",
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 2
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+          "potency": 0,
+          "property": [],
+          "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "strength": 0,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "leather-armor",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "handsHeld": 0,
+          "inSlot": true,
+          "invested": null
+        }
+      },
+      "type": "armor",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.4tIVTg9wj56RrveA"
+      },
+      "effects": [],
+      "sort": 300000,
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.WdJZE7ZqOucajLSB"
+    },
+    {
+      "_id": "kTHp46SJWDpQGIRq",
+      "img": "icons/equipment/neck/collar-carved-bone-teeth.webp",
+      "name": "Houndstooth Collar",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+          "value": "<p>This filthy enchanted collar was stripped from the neck of Vghotan's dead worg and bears the crude marks of goblin sorcery. When worn around the neck, the wearer gains the ability to call upon the strength and ferocity of a worg, turning his hands into claws and raking opponents for tremendous damage.</p>\n<hr />\n<p>The collar fills you with a worg's fearlessness. When you roll a success on a Will save against a fear effect, you get a critical success instead. In addition, anytime you gain the @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} condition, reduce its value by 1.</p>\n<p><strong>Activate—Worg's Ferocity</strong> <span class=\"action-glyph\">1</span> (concentrate, morph)</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Effect</strong> Your hands twist into a worg's claws for 1 minute. You gain a claw unarmed attack that deals 1d6 slashing damage and has the agile, finesse, and unarmed traits.</p>\n<p>@UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.unmDFw02i27ySL4F]{Effect: Worg Claws}</p>\n<hr />\n<p>Lord Ulbrec Dinnesmore of Targos pays a bounty for this collar as proof that Vghotan is dead.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 4
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 90
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "quantity": 1,
+        "rules": [
+          {
+            "adjustment": {
+              "success": "one-degree-better"
+            },
+            "key": "AdjustDegreeOfSuccess",
+            "predicate": [
+              "item:trait:fear"
+            ],
+            "selector": "will"
+          }
+        ],
+        "size": "med",
+        "traits": {
+          "rarity": "unique",
+          "value": [
+            "invested",
+            "magical"
+          ]
+        },
+        "usage": {
+          "value": "worncollar"
+        },
+        "slug": "houndstooth-collar",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn",
+          "invested": false
+        }
+      },
+      "type": "equipment",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.UA66Be7i1HpF3MXw"
+      },
+      "effects": [],
+      "sort": 400000,
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.kTHp46SJWDpQGIRq"
+    },
+    {
+      "_id": "5kXvxdbaNPuHjG34",
+      "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+      "name": "Gold Pieces",
+      "system": {
+        "baseItem": null,
+        "bulk": {
+          "value": 1
+        },
+        "category": "coin",
+        "containerId": null,
+        "description": {
+          "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+          "max": 0,
+          "value": 0
+        },
+        "level": {
+          "value": 0
+        },
+        "material": {
+          "grade": null,
+          "type": null
+        },
+        "price": {
+          "value": {
+            "gp": 1
+          }
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Pathfinder Player Core"
+        },
+        "quantity": 7,
+        "rules": [],
+        "size": "med",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "slug": "gold-pieces",
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "equipped": {
+          "carryType": "worn"
+        }
+      },
+      "type": "treasure",
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+      },
+      "effects": [],
+      "sort": 500000,
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.5kXvxdbaNPuHjG34"
+    },
+    {
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Longspear",
+      "type": "melee",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 12
+        },
+        "damageRolls": {
+          "77yefu6gvebev32a": {
+            "damage": "1d8+6",
+            "damageType": "piercing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "reach-10"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "3F3vYX7C9PKjloQc"
+        }
+      },
+      "_id": "oXNQ7nbqgM2otYZb",
+      "sort": 600000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.oXNQ7nbqgM2otYZb"
+    },
+    {
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Warg Jaws",
+      "type": "melee",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": [
+            "knockdown"
+          ]
+        },
+        "bonus": {
+          "value": 12
+        },
+        "damageRolls": {
+          "sag4tcrlnbvnhdpr": {
+            "damage": "1d10+4",
+            "damageType": "piercing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "range": null,
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "unarmed"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "_id": "CHfYO3kPRNCgQrh5",
+      "sort": 700000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.CHfYO3kPRNCgQrh5"
+    },
+    {
+      "img": "systems/pf2e/icons/default-icons/melee.svg",
+      "name": "Javelin",
+      "type": "melee",
+      "system": {
+        "attack": {
+          "value": ""
+        },
+        "attackEffects": {
+          "custom": "",
+          "value": []
+        },
+        "bonus": {
+          "value": 11
+        },
+        "damageRolls": {
+          "uu11tkejnlgos7lw": {
+            "damage": "1d6+6",
+            "damageType": "piercing"
+          }
+        },
+        "description": {
+          "value": ""
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "range": {
+          "increment": 30,
+          "max": null
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "flags": {
+        "pf2e": {
+          "linkedWeapon": "NUVlYHPBfHxFP25t"
+        }
+      },
+      "_id": "UljFnlpYvVAAlv2p",
+      "sort": 800000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.UljFnlpYvVAAlv2p"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/Passive.webp",
+      "name": "Knockdown",
+      "system": {
+        "actionType": {
+          "value": "passive"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>When Vghotan critically hits with his warg jaws Strike, the target is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": "knockdown",
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_id": "EHiAJtM4alBQCwdh",
+      "sort": 900000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.EHiAJtM4alBQCwdh"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Mounted Charge",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p>Vghotan @UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]{Strides}, then makes a longspear or warg jaws @UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]{Strike}. If he moved at least 20 feet, the Strike deals an extra 1d6 damage, and on a hit, the target must succeed at a @Check[reflex|dc:20] save or fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [
+          {
+            "domain": "damage",
+            "key": "RollOption",
+            "option": "mounted-charge",
+            "toggleable": true
+          },
+          {
+            "diceNumber": 1,
+            "dieSize": "d6",
+            "key": "DamageDice",
+            "predicate": [
+              "mounted-charge"
+            ],
+            "selector": "strike-damage"
+          }
+        ],
+        "slug": "mounted-charge",
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "flourish"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_id": "ay2vCJiIrfGFcXWF",
+      "sort": 1000000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.ay2vCJiIrfGFcXWF"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/OneAction.webp",
+      "name": "Houndmaster",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 1
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p>Vghotan barks a command. Up to two of Vghotan's Hounds within 60 feet that can hear him immediately @UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]{Stride}.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "auditory"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "frequency": {
+          "max": 1,
+          "per": "round"
+        }
+      },
+      "type": "action",
+      "_id": "63uN04Mrq9FcRcui",
+      "sort": 1100000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.63uN04Mrq9FcRcui"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/TwoActions.webp",
+      "name": "Howl of the Hunt",
+      "system": {
+        "actionType": {
+          "value": "action"
+        },
+        "actions": {
+          "value": 2
+        },
+        "category": "offensive",
+        "description": {
+          "value": "<p><strong>Frequency</strong> once per encounter</p>\n<hr />\n<p>Vghotan and his warg loose a hunting howl. Each enemy in a @Template[emanation|distance:30] must attempt a @Check[will|dc:20] save.</p>\n<hr />\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": [
+            "auditory",
+            "emotion",
+            "fear",
+            "mental"
+          ]
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        }
+      },
+      "type": "action",
+      "_id": "n6DEXScxTbM8BJyw",
+      "sort": 1200000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.n6DEXScxTbM8BJyw"
+    },
+    {
+      "img": "systems/pf2e/icons/actions/FreeAction.webp",
+      "name": "Unhorsed",
+      "system": {
+        "actionType": {
+          "value": "free"
+        },
+        "actions": {
+          "value": null
+        },
+        "category": "defensive",
+        "description": {
+          "value": "<p><strong>Trigger</strong> Vghotan drops below 24 Hit Points for the first time.</p>\n<hr />\n<p><strong>Effect</strong> The warg bucks Vghotan off and flees. Vghotan becomes Small, his Speed becomes 25 feet, and he loses his warg jaws Strike and Mounted Charge. He keeps his longspear.</p>"
+        },
+        "publication": {
+          "license": "ORC",
+          "remaster": true,
+          "title": "Icewind Dale II"
+        },
+        "rules": [],
+        "slug": null,
+        "traits": {
+          "rarity": "common",
+          "value": []
+        },
+        "_migration": {
+          "version": 0.958,
+          "previous": null
+        },
+        "selfEffect": {
+          "name": "Effect: Unhorsed",
+          "uuid": "Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.s61HDgOEyIS6JgQS"
+        }
+      },
+      "type": "action",
+      "_id": "Ex7Y5EVsvqNFGV8D",
+      "sort": 1300000,
+      "_stats": {
+        "coreVersion": "14.369",
+        "systemId": "pf2e",
+        "systemVersion": "8.1.0",
+        "compendiumSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!gGfaBcP9RcGPjznM.Ex7Y5EVsvqNFGV8D"
+    }
+  ],
+  "name": "Vghotan",
+  "system": {
+    "abilities": {
+      "str": {
+        "mod": 4
+      },
+      "dex": {
+        "mod": 3
+      },
+      "con": {
+        "mod": 3
+      },
+      "int": {
+        "mod": -1
+      },
+      "wis": {
+        "mod": 1
+      },
+      "cha": {
+        "mod": 1
+      }
+    },
+    "attributes": {
+      "ac": {
+        "details": "",
+        "value": 19
+      },
+      "allSaves": {
+        "value": ""
+      },
+      "hp": {
+        "details": "",
+        "max": 48,
+        "temp": 0,
+        "value": 48
+      },
+      "speed": {
+        "otherSpeeds": [],
+        "value": 40
+      }
+    },
+    "details": {
+      "blurb": "",
+      "languages": {
+        "details": "",
+        "value": [
+          "common",
+          "goblin"
+        ]
+      },
+      "level": {
+        "value": 3
+      },
+      "privateNotes": "<p><strong>Tactics</strong> Vghotan opens with Howl of the Hunt and Houndmaster, sending his hounds at casters. He uses Mounted Charge on isolated targets and avoids the party's big melee combatant.</p>\n<p><strong>Mounted Charge</strong> Turn on the Mounted Charge toggle before rolling damage to add the extra 1d6.</p>\n<p><strong>Unhorsed</strong> The first time he drops below 24 HP, apply @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-effects.Item.s61HDgOEyIS6JgQS]{Effect: Unhorsed} and stop using warg jaws and Mounted Charge.</p>\n<p><strong>Loot</strong> @UUID[Compendium.cerabonds-degrees-of-success.icewind-dale-2-items.Item.UA66Be7i1HpF3MXw]{Houndstooth Collar} (worn by his warg), 2d6 gp (7 gp in his inventory).</p>",
+      "publicNotes": "<p>Vghotan is the goblin warg-rider captain of the force attacking Targos. The town's defenders garble his name as \"Houndstooth.\" He rides a black warg into battle and runs a pack of half-starved hunting wolves.</p>",
+      "publication": {
+        "license": "ORC",
+        "remaster": true,
+        "title": "Icewind Dale II"
+      }
+    },
+    "initiative": {
+      "statistic": "perception"
+    },
+    "perception": {
+      "details": "",
+      "mod": 10,
+      "senses": [
+        {
+          "type": "darkvision"
+        },
+        {
+          "acuity": "imprecise",
+          "range": 30,
+          "type": "scent"
+        }
+      ]
+    },
+    "resources": {},
+    "saves": {
+      "fortitude": {
+        "saveDetail": "",
+        "value": 11
+      },
+      "reflex": {
+        "saveDetail": "",
+        "value": 10
+      },
+      "will": {
+        "saveDetail": "",
+        "value": 6
+      }
+    },
+    "skills": {
+      "athletics": {
+        "base": 10
+      },
+      "intimidation": {
+        "base": 9
+      },
+      "nature": {
+        "base": 7
+      },
+      "stealth": {
+        "base": 9
+      },
+      "survival": {
+        "base": 8
+      }
+    },
+    "traits": {
+      "rarity": "unique",
+      "size": {
+        "value": "lg"
+      },
+      "value": [
+        "goblin",
+        "humanoid"
+      ]
+    },
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "npc",
+  "prototypeToken": {
+    "name": "Vghotan",
+    "actorLink": false,
+    "disposition": -1,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "tokenizer/npc-images/vghotan.Token.webp"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!actors!gGfaBcP9RcGPjznM"
+}

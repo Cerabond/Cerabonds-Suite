@@ -1,0 +1,61 @@
+{
+  "_id": "eKuecs3aKAuIo41x",
+  "img": "icons/skills/melee/strike-axe-blood-red.webp",
+  "name": "Effect: Blood Frenzy",
+  "system": {
+    "description": {
+      "value": "<p>While below half his Hit Points, Ghotrag gains a +2 status bonus to damage rolls and takes a -1 penalty to AC.</p>"
+    },
+    "duration": {
+      "expiry": "turn-start",
+      "sustained": false,
+      "unit": "unlimited",
+      "value": -1
+    },
+    "level": {
+      "value": 4
+    },
+    "publication": {
+      "license": "ORC",
+      "remaster": true,
+      "title": "Icewind Dale II"
+    },
+    "rules": [
+      {
+        "key": "FlatModifier",
+        "selector": "damage",
+        "type": "status",
+        "value": 2
+      },
+      {
+        "key": "FlatModifier",
+        "selector": "ac",
+        "value": -1
+      }
+    ],
+    "start": {
+      "initiative": null,
+      "value": 0
+    },
+    "tokenIcon": {
+      "show": true
+    },
+    "traits": {
+      "rarity": "common",
+      "value": []
+    },
+    "slug": "effect-blood-frenzy",
+    "_migration": {
+      "version": 0.958,
+      "previous": null
+    }
+  },
+  "type": "effect",
+  "_stats": {
+    "coreVersion": "14.369",
+    "systemId": "pf2e",
+    "systemVersion": "8.1.0"
+  },
+  "effects": [],
+  "_key": "!items!eKuecs3aKAuIo41x"
+}
